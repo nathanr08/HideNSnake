@@ -10,10 +10,15 @@ public class HamsterController : BaseControllable {
     public float runTime = 5.0f;
     public float runCooldownTime = 10.0f;
     public float stunSpeed = 0.0f;
+    public float initialVisibilityTime = 5.0f;
+
+    public bool isVisible = true;
 
     private float runCooldownTimer = 0.0f;
+    private float visibilityTimer = 0.0f;
 
     private Rigidbody rBody;
+    private MeshRenderer meshRenderer;
 
     #region animVars
     public static string animHealth = "playerHealth";
@@ -28,15 +33,23 @@ public class HamsterController : BaseControllable {
         base.Start();
 
         rBody = GetComponent<Rigidbody>();
+        meshRenderer = GetComponent<MeshRenderer>();
 
         // init animator vals
         this.animator.SetInteger(animHealth, hp);
 
         runCooldownTimer = runCooldownTime;
+        SetVisibility(true);
     }
 
     public void Update()
     {
+        if (visibilityTimer < initialVisibilityTime)
+            visibilityTimer += Time.deltaTime;
+
+        if (visibilityTimer >= initialVisibilityTime)
+            SetVisibility(false);
+
         if (runCooldownTimer < runCooldownTime)
             runCooldownTimer += Time.deltaTime;
     }
@@ -49,6 +62,12 @@ public class HamsterController : BaseControllable {
         rBody.MovePosition(transform.position + movementPerSecond * Time.deltaTime);
 
         this.animator.SetFloat(animMoveSpeed, movementPerSecond.magnitude);
+    }
+
+    public void SetVisibility(bool visibility)
+    {
+        isVisible = visibility;
+        meshRenderer.enabled = isVisible;   
     }
 
     public void CheckRun()
