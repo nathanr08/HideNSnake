@@ -6,6 +6,7 @@ public class HamsterIdleBehavior : State {
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        Debug.Log("hamster in idle");
+        HamsterController hamsterController = ((HamsterController)controller);
+        hamsterController.DoMovement(hamsterController.walkSpeed);
     }
 }

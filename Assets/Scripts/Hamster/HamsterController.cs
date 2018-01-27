@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HamsterController : BaseControllable {
 
-    public int hp;
+    public int hp = 1;
 
     public float walkSpeed = 50.0f;
 
@@ -33,10 +33,12 @@ public class HamsterController : BaseControllable {
 
     // Use this for initialization
     public override void Start () {
+        base.Start();
 
         rBody = GetComponent<Rigidbody>();
 
-        base.Start();
+        // init animator vals
+        this.animator.SetInteger(animHealth, hp);
 	}
 
     public void DoMovement(float moveSpeed)
