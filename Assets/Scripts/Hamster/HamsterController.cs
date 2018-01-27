@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HamsterController : BaseControllable {
+public class HamsterController : StateController {
 
     public float walkSpeed = 50.0f;
     public float runSpeed = 100.0f;
@@ -19,6 +19,7 @@ public class HamsterController : BaseControllable {
 
     private Rigidbody rBody;
     private MeshRenderer meshRenderer;
+    private BaseControllable baseControllable;
 
     #region animVars
     public static string animHealth = "playerHealth";
@@ -34,6 +35,7 @@ public class HamsterController : BaseControllable {
 
         rBody = GetComponent<Rigidbody>();
         meshRenderer = GetComponent<MeshRenderer>();
+        baseControllable = GetComponent<BaseControllable>();
 
         // init animator vals
         this.animator.SetInteger(animHealth, health);
@@ -57,8 +59,8 @@ public class HamsterController : BaseControllable {
 
     public void DoMovement(float moveSpeed)
     {
-        float xInput = Input.GetAxis(InputHandles.HorizontalAxis);
-        float zInput = Input.GetAxis(InputHandles.VerticalAxis);
+        float xInput = Input.GetAxis(baseControllable.InputHandles.HorizontalAxis);
+        float zInput = Input.GetAxis(baseControllable.InputHandles.VerticalAxis);
         Vector3 movementPerSecond = new Vector3(xInput * moveSpeed, 0.0f, zInput * moveSpeed);
         rBody.MovePosition(transform.position + movementPerSecond * Time.deltaTime);
 
@@ -73,7 +75,7 @@ public class HamsterController : BaseControllable {
 
     public void CheckRun()
     {
-        if(Input.GetButtonDown(InputHandles.Action))
+        if(Input.GetButtonDown(baseControllable.InputHandles.Action))
         {
             if (CanRun())
             {

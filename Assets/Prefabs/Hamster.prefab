@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54833409123288412}
   - component: {fileID: 95362407463884372}
   - component: {fileID: 114559254535078850}
+  - component: {fileID: 114670240040587064}
   m_Layer: 0
   m_Name: Hamster
   m_TagString: Untagged
@@ -132,13 +133,27 @@ MonoBehaviour:
   animator: {fileID: 0}
   currState: {fileID: 0}
   PlayerNumber: 1
-  hp: 1
   walkSpeed: 50
   runSpeed: 100
   runTime: 5
-  runTimer: 0
+  runCooldownTime: 10
   stunSpeed: 0
-  stunTime: 3
+  initialVisibilityTime: 5
+  isVisible: 1
+--- !u!114 &114670240040587064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056969262862080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9816a22fb7c1a4ab831bdc50bce0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  currState: {fileID: 0}
+  PlayerNumber: 0
 --- !u!136 &136442045084641882
 CapsuleCollider:
   m_ObjectHideFlags: 1
