@@ -22,6 +22,9 @@ GameObject:
   - component: {fileID: 33898381454972448}
   - component: {fileID: 136442045084641882}
   - component: {fileID: 23173533719063070}
+  - component: {fileID: 54833409123288412}
+  - component: {fileID: 95362407463884372}
+  - component: {fileID: 114559254535078850}
   m_Layer: 0
   m_Name: Hamster
   m_TagString: Untagged
@@ -83,6 +86,61 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1056969262862080}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54833409123288412
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056969262862080}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!95 &95362407463884372
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056969262862080}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 544e21af39fa2854d834ae912fe968b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114559254535078850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056969262862080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd329e0485e71164eba05c2835d4871e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 95362407463884372}
+  currState: {fileID: 0}
+  PlayerNumber: 0
+  playerNum: 0
+  hp: 0
+  walkSpeed: 50
+  runSpeed: 100
+  runTime: 5
+  runTimer: 0
+  stunSpeed: 0
+  stunTime: 3
+  currMoveSpeed: 0
 --- !u!136 &136442045084641882
 CapsuleCollider:
   m_ObjectHideFlags: 1

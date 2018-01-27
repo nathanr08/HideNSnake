@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HamsterController : BaseControllable {
 
-    public int playerNum;
-
     public int hp;
 
     public float walkSpeed = 50.0f;
