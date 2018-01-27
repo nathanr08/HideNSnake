@@ -22,9 +22,14 @@ public class HamsterController : BaseControllable {
     public float stunTime = 3.0f;
     private float stunTimer = 0.0f;
 
-    public float currMoveSpeed;
-
     private Rigidbody rBody;
+
+    #region animVars
+    static string animHealth = "playerHealth";
+    static string animMoveSpeed = "moveSpeed";
+    static string animStunTrigger = "stun";
+    static string animStunTimer = "stunTimer";
+    #endregion
 
     // Use this for initialization
     public override void Start () {
@@ -34,4 +39,13 @@ public class HamsterController : BaseControllable {
         base.Start();
 	}
 
+    public void DoMovement(float moveSpeed)
+    {
+        float xInput = Input.GetAxis(InputHandles.HorizontalAxis);
+        float zInput = Input.GetAxis(InputHandles.VerticalAxis);
+        Vector3 movement = new Vector3(xInput * moveSpeed, 0.0f, zInput * moveSpeed);
+        rBody.MovePosition(movement);
+
+        this.animator.SetFloat(animMoveSpeed, movement.magnitude);
+    }
 }
