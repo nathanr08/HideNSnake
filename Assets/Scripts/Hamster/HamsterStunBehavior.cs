@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class HamsterStunBehavior : State {
 
+    float stunTimer = 0.0f;
+
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	//override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	//
-	//}
+	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        stunTimer = 0.0f;
+	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         HamsterController hamsterController = ((HamsterController)controller);
         hamsterController.DoMovement(hamsterController.stunSpeed);
         // update stun timers
+        stunTimer += Time.deltaTime;
+        animator.SetFloat(HamsterController.animStunTimer, stunTimer);
     }
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state

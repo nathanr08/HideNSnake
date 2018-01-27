@@ -5,31 +5,22 @@ using UnityEngine;
 public class HamsterController : BaseControllable {
 
     public int hp = 1;
-
     public float walkSpeed = 50.0f;
-
-    /// <summary>
-    /// running state vars
-    /// </summary>
     public float runSpeed = 100.0f;
     public float runTime = 5.0f;
-    public float runTimer = 0.0f;
-
-    /// <summary>
-    /// for handling stun state
-    /// </summary>
+    public float runCooldownTime = 10.0f;
     public float stunSpeed = 0.0f;
-    public float stunTime = 3.0f;
-    private float stunTimer = 0.0f;
+
+    private float runCooldownTimer = 0.0f;
 
     private Rigidbody rBody;
 
     #region animVars
-    static string animHealth = "playerHealth";
-    static string animMoveSpeed = "moveSpeed";
-    static string animStunTrigger = "stun";
-    static string animStunTimer = "stunTimer";
-    static string animRunTrigger = "run";
+    public static string animHealth = "playerHealth";
+    public static string animMoveSpeed = "moveSpeed";
+    public static string animStunTrigger = "stun";
+    public static string animStunTimer = "stunTimer";
+    public static string animRunTrigger = "run";
     #endregion
 
     // Use this for initialization
@@ -40,7 +31,15 @@ public class HamsterController : BaseControllable {
 
         // init animator vals
         this.animator.SetInteger(animHealth, hp);
-	}
+
+        runCooldownTimer = runCooldownTime;
+    }
+
+    public void Update()
+    {
+        if (runCooldownTimer < runCooldownTime)
+            runCooldownTimer += Time.deltaTime;
+    }
 
     public void DoMovement(float moveSpeed)
     {
@@ -56,7 +55,28 @@ public class HamsterController : BaseControllable {
     {
         if(Input.GetButtonDown(InputHandles.Action))
         {
-            animator.SetTrigger(animRunTrigger);
+            if (CanRun())
+            {
+                animator.SetTrigger(animRunTrigger);
+            }
+            else
+            {
+                // we tried to run, but CD wouldnt let us. trigger some effect
+            }
         }
+    }
+
+    public bool CanRun()
+    {
+        bool canRun = false;
+        if (runCooldownTimer >= runCooldownTime)
+            canRun = true;
+
+        return canRun;
+    }
+
+    public void StartRunCooldown()
+    {
+        runCooldownTimer = 0.0f;
     }
 }

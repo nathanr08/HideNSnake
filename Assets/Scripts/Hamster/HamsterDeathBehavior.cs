@@ -13,7 +13,7 @@ public class HamsterDeathBehavior : State {
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         // check for ending of death animation and destroy this gameobject
-        //Destroy(controller.gameObject);
+        Destroy(controller.gameObject);
 	}
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
