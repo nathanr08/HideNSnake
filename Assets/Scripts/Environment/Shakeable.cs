@@ -9,6 +9,11 @@ public class Shakeable : MonoBehaviour {
         EnvObjectSound();
         EnvObjectAnimate();
     }
+    public void OnTriggerExit(Collider other)
+    {
+        EnvObjectSound();
+        EnvObjectAnimate();
+    }
 
     protected virtual void EnvObjectSound(){ }
     protected virtual void EnvObjectAnimate() { }
