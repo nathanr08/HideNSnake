@@ -12,7 +12,7 @@ public class StateController : MonoBehaviour {
     public State currState;
 
 	// Use this for initialization
-	protected virtual void Start () {
+	public virtual void Start () {
         if (animator == null)
             animator = GetComponent<Animator>();
 

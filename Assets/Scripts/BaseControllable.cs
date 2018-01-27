@@ -33,7 +33,7 @@ public class InputHandleNames
     #endregion
 }
 
-public class BaseControllable : MonoBehaviour
+public class BaseControllable : StateController
 {
 
     #region ProtectedMembers
