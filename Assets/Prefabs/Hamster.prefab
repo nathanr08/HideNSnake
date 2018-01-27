@@ -110,7 +110,7 @@ Animator:
   m_GameObject: {fileID: 1056969262862080}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fd6601ce959e1b54aa0dbe1e48ad571e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 34792de7f0c789b47bdd58a6902dd253, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129,15 +129,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd329e0485e71164eba05c2835d4871e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  currState: {fileID: 0}
   PlayerNumber: 0
-  hp: 0
+  hp: 1
   walkSpeed: 50
   runSpeed: 100
   runTime: 5
   runTimer: 0
   stunSpeed: 0
   stunTime: 3
-  currMoveSpeed: 0
 --- !u!136 &136442045084641882
 CapsuleCollider:
   m_ObjectHideFlags: 1

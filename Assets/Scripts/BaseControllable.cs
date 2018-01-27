@@ -47,6 +47,7 @@ public class BaseControllable : StateController
     public virtual void Start()
     {
         InputHandles = new InputHandleNames(PlayerNumber);
+        base.Start();
     }
 
     // Set the string names for input
