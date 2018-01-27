@@ -44,7 +44,7 @@ public class BaseControllable : MonoBehaviour
 
     #region PublicMethods
     // Use this for initialization
-    public void Start()
+    public virtual void Start()
     {
         InputHandles = new InputHandleNames(PlayerNumber);
     }
