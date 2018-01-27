@@ -10,6 +10,6 @@ public class Shakeable : MonoBehaviour {
         EnvObjectAnimate();
     }
 
-    protected void EnvObjectSound(){ }
-    protected void EnvObjectAnimate() { }
+    protected virtual void EnvObjectSound(){ }
+    protected virtual void EnvObjectAnimate() { }
 }
