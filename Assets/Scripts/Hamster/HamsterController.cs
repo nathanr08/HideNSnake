@@ -45,8 +45,8 @@ public class HamsterController : BaseControllable {
     {
         float xInput = Input.GetAxis(InputHandles.HorizontalAxis);
         float zInput = Input.GetAxis(InputHandles.VerticalAxis);
-        Vector3 movement = new Vector3(xInput * moveSpeed, 0.0f, zInput * moveSpeed);
-        rBody.MovePosition(movement);
+        Vector3 movement = new Vector3(xInput * moveSpeed * Time.deltaTime, 0.0f, zInput * moveSpeed * Time.deltaTime);
+        rBody.MovePosition(transform.position + movement);
 
         this.animator.SetFloat(animMoveSpeed, movement.magnitude);
     }

@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   currState: {fileID: 0}
-  PlayerNumber: 0
+  PlayerNumber: 1
   hp: 1
   walkSpeed: 50
   runSpeed: 100
