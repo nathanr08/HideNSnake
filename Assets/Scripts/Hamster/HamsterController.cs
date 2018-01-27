@@ -27,7 +27,7 @@ public class HamsterController : BaseControllable {
     private Rigidbody rBody;
 
     // Use this for initialization
-    protected override void Start () {
+    public override void Start () {
 
         rBody = GetComponent<Rigidbody>();
 
