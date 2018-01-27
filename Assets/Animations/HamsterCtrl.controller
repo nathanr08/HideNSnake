@@ -32,6 +32,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: run
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -68,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edad70d41efc49b4ab1f963a8cb325f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!114 &114397011927552100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79,6 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa4d5f26085d7f49806ba553078ac4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!114 &114593087142755856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fce5371359d534b892ad7ce003890a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!114 &114643846305356076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec50365122cd874e93f70fb9da333f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!1101 &1101027615888162408
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -125,18 +135,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101186478050322414
+--- !u!1101 &1101128331736658640
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: playerHealth
+  - m_ConditionMode: 1
+    m_ConditionEvent: run
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102892901705196932}
+  m_DstState: {fileID: 1102307406033523224}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -149,18 +159,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101213906866041864
+--- !u!1101 &1101186478050322414
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: stunTimer
-    m_EventTreshold: 3
+  - m_ConditionMode: 6
+    m_ConditionEvent: playerHealth
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102307406033523224}
+  m_DstState: {fileID: 1102892901705196932}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -365,30 +375,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101804563537661142
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: stunTimer
-    m_EventTreshold: 3
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102125639973845878}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &1101949206291525408
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -396,8 +382,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: moveSpeed
+  - m_ConditionMode: 1
+    m_ConditionEvent: run
     m_EventTreshold: 55
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102307406033523224}
@@ -448,8 +434,6 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101558396827865256}
-  - {fileID: 1101804563537661142}
-  - {fileID: 1101213906866041864}
   - {fileID: 1101563796978431702}
   m_StateMachineBehaviours:
   - {fileID: 114593087142755856}
@@ -565,6 +549,7 @@ AnimatorState:
   - {fileID: 1101027615888162408}
   - {fileID: 1101326636737487082}
   - {fileID: 1101791411771395138}
+  - {fileID: 1101128331736658640}
   m_StateMachineBehaviours:
   - {fileID: 114240560915324540}
   m_Position: {x: 50, y: 50, z: 0}

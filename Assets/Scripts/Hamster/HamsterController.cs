@@ -29,6 +29,7 @@ public class HamsterController : BaseControllable {
     static string animMoveSpeed = "moveSpeed";
     static string animStunTrigger = "stun";
     static string animStunTimer = "stunTimer";
+    static string animRunTrigger = "run";
     #endregion
 
     // Use this for initialization
@@ -49,5 +50,13 @@ public class HamsterController : BaseControllable {
         rBody.MovePosition(transform.position + movement);
 
         this.animator.SetFloat(animMoveSpeed, movement.magnitude);
+    }
+
+    public void CheckRun()
+    {
+        if(Input.GetButtonDown(InputHandles.Action))
+        {
+            animator.SetTrigger(animRunTrigger);
+        }
     }
 }
