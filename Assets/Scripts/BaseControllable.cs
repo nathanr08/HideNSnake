@@ -33,7 +33,7 @@ public class InputHandleNames
     #endregion
 }
 
-public class BaseControllable : MonoBehaviour {
+public class BaseControllable : StateController {
 
 #region ProtectedMembers
     [SerializeField]
@@ -43,9 +43,10 @@ public class BaseControllable : MonoBehaviour {
 
 #region PublicMethods
     // Use this for initialization
-    public void Start () 
+    protected override void Start () 
     {
 		InputHandles = new InputHandleNames( PlayerNumber );
+        base.Start();
 	 }   
 	
 	// Set the string names for input
