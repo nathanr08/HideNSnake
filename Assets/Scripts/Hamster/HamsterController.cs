@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HamsterController : BaseControllable {
 
-    public int hp = 1;
     public float walkSpeed = 50.0f;
     public float runSpeed = 100.0f;
     public float runTime = 5.0f;
@@ -14,6 +13,7 @@ public class HamsterController : BaseControllable {
 
     public bool isVisible = true;
 
+    private int health = 1;
     private float runCooldownTimer = 0.0f;
     private float visibilityTimer = 0.0f;
 
@@ -36,7 +36,7 @@ public class HamsterController : BaseControllable {
         meshRenderer = GetComponent<MeshRenderer>();
 
         // init animator vals
-        this.animator.SetInteger(animHealth, hp);
+        this.animator.SetInteger(animHealth, health);
 
         runCooldownTimer = runCooldownTime;
         SetVisibility(true);
@@ -47,7 +47,8 @@ public class HamsterController : BaseControllable {
         if (visibilityTimer < initialVisibilityTime)
             visibilityTimer += Time.deltaTime;
 
-        if (visibilityTimer >= initialVisibilityTime)
+        if (visibilityTimer >= initialVisibilityTime &&
+            currState.GetType() != typeof(HamsterRunBehavior))
             SetVisibility(false);
 
         if (runCooldownTimer < runCooldownTime)
@@ -97,5 +98,11 @@ public class HamsterController : BaseControllable {
     public void StartRunCooldown()
     {
         runCooldownTimer = 0.0f;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        animator.SetInteger(animHealth, health);
     }
 }
