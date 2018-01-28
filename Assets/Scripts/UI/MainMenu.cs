@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour {
 
     public void StartButtonClicked()
     {
-        SceneManager.LoadScene(setupScene);
+        new PushMenuEvent("setup");
     }
 
     public void QuitButtonClicked()

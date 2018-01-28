@@ -158,4 +158,18 @@ public class PlayerSelect : MonoBehaviour {
         }
         return ready;
     }
+
+    public string GetRole()
+    {
+        string role = "";
+        if(IsReadyToStart())
+        {
+            if (isSnake)
+                role = GameManager.snakePlayer;
+            else
+                role = GameManager.hamsterPlayer;
+        }
+        
+        return role;
+    }
 }

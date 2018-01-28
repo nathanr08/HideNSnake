@@ -9,11 +9,13 @@ public class MenuManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        menuStack = new Stack<string>();
+
         PushMenuEvent  .Register(PushMenuEventHandler  );
         PopMenuEvent   .Register(PopMenuEventHandler   );
         ChangeMenuEvent.Register(ChangeMenuEventHandler);
         InitGameEvent  .Register(InitGameEventHandler  );
-        new PushMenuEvent( "setup" );
+        new PushMenuEvent( "mainMenu" );
     }
 
     public void PushMenuEventHandler(object sender, PushMenuEvent.PushMenuEventArgs e)

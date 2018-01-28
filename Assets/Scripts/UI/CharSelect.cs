@@ -22,6 +22,13 @@ public class CharSelect : MonoBehaviour {
             if (Input.GetButton(baseControllable.InputHandles.Menu))
             {
                 // start game logic
+                List<string> playerData = new List<string>();
+                foreach(PlayerSelect player in playerSelects)
+                {
+                    playerData.Add(player.GetRole());
+                }
+                new ChangeMenuEvent("");
+                new InitGameEvent(playerData);
             }
         }
         else

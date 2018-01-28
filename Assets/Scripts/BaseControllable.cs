@@ -47,13 +47,18 @@ public class BaseControllable : MonoBehaviour
     // Use this for initialization
     public virtual void Start()
     {
-        InputHandles = new InputHandleNames(PlayerNumber);
+        if(InputHandles == null)
+            InputHandles = new InputHandleNames(PlayerNumber);
     }
 
     // Set the string names for input
-    protected void SetPlayerInputNumber(int playerNum)
+    public void SetPlayerInputNumber(int playerNum)
     {
-        this.InputHandles.SetPlayerInputNumber(playerNum);
+        PlayerNumber = playerNum;
+        if (InputHandles == null)
+            InputHandles = new InputHandleNames(PlayerNumber);
+        else
+            this.InputHandles.SetPlayerInputNumber(playerNum);
     }
     #endregion
 }
