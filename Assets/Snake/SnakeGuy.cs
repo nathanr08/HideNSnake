@@ -47,10 +47,10 @@ public class SnakeGuy : MonoBehaviour {
 	void Update () {
 
         // Hack, if the game has not started, bail
-       // if (GameManager.Instance == null || !GameManager.Instance.gameInProgress)
-       // {
-       //     return;
-       // }
+        if (GameManager.Instance == null || !GameManager.Instance.gameInProgress)
+        {
+            return;
+        }
         Move(MainCamera.transform.up, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.VerticalAxis));
      	Move(MainCamera.transform.right, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.HorizontalAxis));
 
