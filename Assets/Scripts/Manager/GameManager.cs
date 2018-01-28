@@ -108,8 +108,11 @@ public class GameManager : StateController {
         GameObject[] snakes = GameObject.FindGameObjectsWithTag(snakePlayer);
         foreach (GameObject snake in snakes)
         {
-            snake.GetComponent<SnakeGuy>().enabled = enabled;
-            snake.GetComponent<Animator>().enabled = enabled;
+            if (snake.GetComponent<SnakeGuy>())
+            {
+                snake.GetComponent<SnakeGuy>().enabled = enabled;
+                snake.GetComponent<Animator>().enabled = enabled;
+            }
         }
     }
 

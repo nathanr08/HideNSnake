@@ -38,6 +38,7 @@ public class SnakeGuy : MonoBehaviour {
 		MainCamera = GameObject.FindObjectOfType<Camera>();
 
 		ScannerEffect = MainCamera.GetComponent<ScannerEffectDemo>();
+        ScannerEffect.Snake = transform;
 
       baseControllable = GetComponent<BaseControllable>();
 	}
@@ -85,12 +86,21 @@ public class SnakeGuy : MonoBehaviour {
 		SonarCoolDown -= Time.deltaTime;
 	}
 
-   void Sonar( )
+    private void OnDestroy()
+    {
+        Debug.Log("Destroyed" + this);
+    }
+
+    void Sonar( )
    {
+        
 		if(SonarCoolDown > 0)
 			return;
-		
-		ScannerEffect.ScanAtPosition(transform.position);
+
+        if (transform != null)
+        {
+            ScannerEffect.ScanAtPosition(transform.position);
+        }
 
         if (UseFreezeAudio != null && !UseFreezeAudio.isPlaying)
         {

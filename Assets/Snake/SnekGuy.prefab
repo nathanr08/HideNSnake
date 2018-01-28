@@ -1280,7 +1280,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1555513526184562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: -2.89}
+  m_LocalPosition: {x: -0, y: 0.07, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4371226581237620}
@@ -2389,10 +2389,10 @@ Rigidbody:
   m_Mass: 200
   m_Drag: 10
   m_AngularDrag: 10
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!54 &54832128494430150
 Rigidbody:
@@ -2419,7 +2419,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: -0.0012000012}
+  m_ConnectedAnchor: {x: 0, y: 0, z: -0.0012}
   m_UseSpring: 1
   m_Spring:
     spring: 500
@@ -2531,7 +2531,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2620,6 +2620,7 @@ MonoBehaviour:
   SpeedMultiplier: 3000000
   SonarDistance: 100000
   SonarVisibilyDuration: 4
+  SonarCoolDownLength: 8
   UseFreezeAudio: {fileID: 82692889744840546}
 --- !u!114 &114958011900758288
 MonoBehaviour:
@@ -2672,7 +2673,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 79cb5a137d3d2d943bf4049c3f3f1198, type: 2}
+  - {fileID: 2100000, guid: 8725db703feaee04c8075fff5d30e689, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2773,7 +2774,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fd9aecc3c18fadd41ab94a9c100b8bc1, type: 3}
+  - {fileID: 2100000, guid: 8725db703feaee04c8075fff5d30e689, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2825,7 +2826,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fd9aecc3c18fadd41ab94a9c100b8bc1, type: 3}
+  - {fileID: 2100000, guid: 8725db703feaee04c8075fff5d30e689, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2881,7 +2882,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fd9aecc3c18fadd41ab94a9c100b8bc1, type: 3}
+  - {fileID: 2100000, guid: 8725db703feaee04c8075fff5d30e689, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2933,7 +2934,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 9d0176d9f04741449b17703968f47bdb, type: 2}
+  - {fileID: 2100000, guid: 8725db703feaee04c8075fff5d30e689, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2989,7 +2990,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 79cb5a137d3d2d943bf4049c3f3f1198, type: 2}
+  - {fileID: 2100000, guid: 8725db703feaee04c8075fff5d30e689, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

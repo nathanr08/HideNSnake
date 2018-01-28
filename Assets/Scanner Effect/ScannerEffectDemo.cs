@@ -55,7 +55,10 @@ public class ScannerEffectDemo : MonoBehaviour
 	{
 		_scanning = true;
 		ScanDistance = 0;
-		ScannerOrigin.position = Snake.position;
+        if (transform != null)
+        {
+            ScannerOrigin.position = Snake.position;
+        }
 	}
 	void OnEnable()
 	{
