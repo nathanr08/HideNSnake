@@ -70,7 +70,7 @@ public class PlayerSelect : MonoBehaviour {
             {
                 if(Input.GetButtonDown(baseControllable.InputHandles.Cancel))
                 {
-                    JoinGame();
+                    UnConfirmRole();
                 }
             }
         }
@@ -138,5 +138,24 @@ public class PlayerSelect : MonoBehaviour {
         finishedSelecting = false;
         confirmImage.gameObject.SetActive(false);
         JoinGame();
+    }
+
+    public bool HasJoinedGame()
+    {
+        return joinedGame;
+    }
+
+    public bool IsReadyToStart()
+    {
+        bool ready = false;
+        if(joinedGame == false)
+        {
+            ready = true;
+        }
+        else if(finishedSelecting)
+        {
+            ready = true;
+        }
+        return ready;
     }
 }
