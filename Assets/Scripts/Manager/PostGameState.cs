@@ -18,6 +18,9 @@ public class PostGameState : State {
         {
             gameManager.victoryImage.sprite = gameManager.hamsterImage;
         }
+
+        MusicManager.GetInstance().GameMusic.Stop();
+        MusicManager.GetInstance().Fanfare.Play();
     }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,11 +31,14 @@ public class PostGameState : State {
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         GameManager gameManager = (GameManager)controller;
-        new ChangeMenuEvent("mainMenu");
+        new ChangeMenuEvent("mainMenu");        
 
         gameManager.victoryPanel.SetActive(false);
         gameManager.matchTimerText.gameObject.SetActive(false);
-	}
+
+        MusicManager.GetInstance().Fanfare.Stop();
+        MusicManager.GetInstance().MenuMusic.Play();
+    }
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
 	//override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
