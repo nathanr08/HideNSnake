@@ -54,7 +54,7 @@ public class SetUpTheCharacterJoints : MonoBehaviour {
 			ChildCJoint.useSpring = ExampleCJoint.useSpring;
 
 			JointSpring asd = ExampleCJoint.spring;
-			asd.spring = ExampleCJoint.spring.spring + 10.0f;
+			asd.spring = Mathf.Clamp( ExampleCJoint.spring.spring + 8.0f, 300.0f, 800.0f);
 			ChildCJoint.spring = asd;
 
 
