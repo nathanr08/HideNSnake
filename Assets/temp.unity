@@ -2033,25 +2033,55 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 136292694288671412, guid: c1ecb4b32a69247458e9e038fc4f795f,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114307687570218952, guid: c1ecb4b32a69247458e9e038fc4f795f,
         type: 2}
       propertyPath: SpeedMultiplier
-      value: 700000
+      value: 1500000
       objectReference: {fileID: 0}
     - target: {fileID: 54832128494430150, guid: c1ecb4b32a69247458e9e038fc4f795f,
         type: 2}
       propertyPath: m_Drag
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 59389225670130192, guid: c1ecb4b32a69247458e9e038fc4f795f,
         type: 2}
       propertyPath: m_Spring.spring
-      value: 700
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 54832128494430150, guid: c1ecb4b32a69247458e9e038fc4f795f,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54832128494430150, guid: c1ecb4b32a69247458e9e038fc4f795f,
+        type: 2}
+      propertyPath: m_Mass
+      value: 0.033
+      objectReference: {fileID: 0}
+    - target: {fileID: 54832128494430150, guid: c1ecb4b32a69247458e9e038fc4f795f,
+        type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54448209577018828, guid: c1ecb4b32a69247458e9e038fc4f795f,
+        type: 2}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 59389225670130192, guid: c1ecb4b32a69247458e9e038fc4f795f,
+        type: 2}
+      propertyPath: m_UseLimits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 59389225670130192, guid: c1ecb4b32a69247458e9e038fc4f795f,
+        type: 2}
+      propertyPath: m_Spring.damper
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 59389225670130192, guid: c1ecb4b32a69247458e9e038fc4f795f,
+        type: 2}
+      propertyPath: m_Spring.targetPosition
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
