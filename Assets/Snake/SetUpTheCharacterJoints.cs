@@ -34,7 +34,9 @@ public class SetUpTheCharacterJoints : MonoBehaviour {
 			if(SpCol)
 			{
 				SphereCollider temp = child.AddComponent<SphereCollider>();
-				temp = SpCol;
+				temp.radius = SpCol.radius;
+				temp.center = SpCol.center;
+				temp.isTrigger = SpCol.isTrigger;
 			}
 
 			ChildRBody.mass = ParentRBody.mass;

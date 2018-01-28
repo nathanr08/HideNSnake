@@ -52,7 +52,7 @@ public class Shakeable : MonoBehaviour {
 
     public void OnTriggerStay(Collider other)
     {
-		if(other.gameObject.layer == LayerMask.NameToLayer("Shakeable"))
+		if(other.gameObject.layer == LayerMask.NameToLayer("Shakeable")||other.gameObject.layer == LayerMask.NameToLayer("SnakeHead")||other.gameObject.layer == LayerMask.NameToLayer("SnakeBody"))
 			return;
 
         // if its not in the list make a list entry for it
