@@ -12,27 +12,29 @@ public class HamsterRunBehavior : State {
         runTimer = 0.0f;
         HamsterController hamsterController = ((HamsterController)controller);
         hamsterController.SetVisibility(true);
-        
-        // Play the run sound
-        if (hamsterController.RunAudio != null && !hamsterController.RunAudio.isPlaying)
-        {
-            hamsterController.RunAudio.Play();
-        }
 
         if (hamsterController.WalkFastAudio != null && !hamsterController.WalkFastAudio.isPlaying)
         {
             // Stop the walk audio first
             if (hamsterController.WalkAudio != null && hamsterController.WalkAudio.isPlaying)
             {
-                hamsterController.WalkAudio.Play();
+                hamsterController.WalkAudio.Stop();
             }
-            
+
             hamsterController.WalkFastAudio.PlayDelayed(0.4f);
         }
+
+        // Play the run sound
+        if (hamsterController.RunAudio != null && !hamsterController.RunAudio.isPlaying)
+        {
+            hamsterController.RunAudio.Play();
+        }
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        
         HamsterController hamsterController = ((HamsterController)controller);
         runTimer += Time.deltaTime;
         Debug.Log("@@@@@@@@@@@@@@@" + runTimer);
@@ -48,12 +50,12 @@ public class HamsterRunBehavior : State {
             hamsterController.DoMovement(hamsterController.runSpeed);
 
             // Play the wind down sound
-            if (hamsterController.runTime - runTimer <= 1)
+            if (hamsterController.runTime - runTimer <= 1.2)
             {
                 hamsterController.DoMovement(Mathf.Lerp(hamsterController.runSpeed, hamsterController.walkSpeed, runTimer / hamsterController.runTime));
-                if (hamsterController.RunAudioEnd != null && !hamsterController.RunAudioEnd.isPlaying)
+                if (hamsterController.runTime - runTimer > 0.4 && hamsterController.RunAudioEnd != null && !hamsterController.RunAudioEnd.isPlaying)
                 {
-                    hamsterController.RunAudioEnd.PlayDelayed(0.3f);
+                    hamsterController.RunAudioEnd.PlayDelayed(0.1f);
                 }
             }            
             
