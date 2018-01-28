@@ -14,6 +14,12 @@ public class HamsterWalkBehavior : State {
         HamsterController hamsterController = ((HamsterController)controller);
         hamsterController.CheckRun();
         hamsterController.DoMovement(hamsterController.walkSpeed);
+
+        // Play the walk sound
+        if (hamsterController.WalkAudio != null && !hamsterController.WalkAudio.isPlaying)
+        {
+            hamsterController.GetComponent<AudioSource>().Play();
+        }
     }
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
