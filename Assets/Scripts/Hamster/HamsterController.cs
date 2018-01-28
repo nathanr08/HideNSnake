@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HamsterController : StateController {
+public class HamsterController : StateController
+{
 
     public float walkSpeed = 50.0f;
     public float runSpeed = 100.0f;
@@ -12,6 +13,13 @@ public class HamsterController : StateController {
     public float initialVisibilityTime = 5.0f;
 
     public bool isVisible = true;
+
+    public float appearDurration = 0.2f;
+    public float disappearDurration = 1.0f;
+    [SerializeField]
+    private float fadeTimer = 0.0f;
+    private List<Material> startColors = new List<Material>();
+
 
     private int health = 1;
     private float runCooldownTimer = 0.0f;
@@ -30,12 +38,22 @@ public class HamsterController : StateController {
     #endregion
 
     // Use this for initialization
-    public override void Start () {
+    public override void Start()
+    {
         base.Start();
 
         rBody = GetComponent<Rigidbody>();
         meshRenderer = GetComponent<MeshRenderer>();
         baseControllable = GetComponent<BaseControllable>();
+        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer renderer in renderers)
+        {
+            renderer.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            renderer.material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            renderer.material.renderQueue = 3000;
+            startColors.Add( renderer.material );
+        }
+        print( startColors.Count );
 
         // init animator vals
         this.animator.SetInteger(animHealth, health);
@@ -46,12 +64,40 @@ public class HamsterController : StateController {
 
     public void Update()
     {
+        ///////////////////////////////////////////////
+        // Visability                                //
+        ///////////////////////////////////////////////
         if (visibilityTimer < initialVisibilityTime)
+        {
             visibilityTimer += Time.deltaTime;
 
-        if (visibilityTimer >= initialVisibilityTime &&
-            currState.GetType() != typeof(HamsterRunBehavior))
-            SetVisibility(false);
+            if (visibilityTimer >= initialVisibilityTime &&
+                currState.GetType() != typeof(HamsterRunBehavior))
+                SetVisibility(false);
+        }
+
+        if (0.0f < fadeTimer)
+        {
+            fadeTimer -= Time.deltaTime;
+            float alpha = fadeTimer;
+            if (isVisible)
+            {
+                alpha /= appearDurration;
+                alpha = 1.0f - alpha;
+            }
+            else
+            {
+                alpha /= disappearDurration;
+            }
+            foreach (Material m in startColors)
+            {
+                Color c = m.color;
+                m.color = new Color(c.r, c.g, c.b, alpha);
+            }
+        }
+        ///////////////////////////////////////////////
+        // End Visability                            //
+        ///////////////////////////////////////////////
 
         if (runCooldownTimer < runCooldownTime)
             runCooldownTimer += Time.deltaTime;
@@ -73,17 +119,26 @@ public class HamsterController : StateController {
 
     public void SetVisibility(bool visibility)
     {
+        print( "set visability " + visibility );
         isVisible = visibility;
-        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
-        foreach(MeshRenderer renderer in renderers)
+        if( isVisible )
         {
-            renderer.enabled = visibility;
+            fadeTimer = appearDurration;
         }
+        else
+        {
+            fadeTimer = disappearDurration;
+        }
+        //MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
+        //foreach (MeshRenderer renderer in renderers)
+        //{
+        //    renderer.enabled = visibility;
+        //}
     }
 
     public void CheckRun()
     {
-        if(Input.GetButtonDown(baseControllable.InputHandles.Action))
+        if (Input.GetButtonDown(baseControllable.InputHandles.Action))
         {
             if (CanRun())
             {
@@ -118,9 +173,14 @@ public class HamsterController : StateController {
 
     public void OnTriggerEnter(Collider other)
     {
-        if( other.gameObject.layer == LayerMask.NameToLayer("SnakeHead") )
+        if (other.gameObject.layer == LayerMask.NameToLayer("SnakeHead"))
         {
-            TakeDamage( 1 );
+            TakeDamage(1);
         }
+    }
+
+    public void Freeze( )
+    {
+        animator.SetTrigger(animStunTrigger);
     }
 }
