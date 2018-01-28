@@ -6,13 +6,11 @@ public class HamsterDeathBehavior : State {
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        // play death sound....
-        
-        HamsterController hamsterController = ((HamsterController)controller);
+        // play death sound....            
                
-        if (hamsterController.DeathAudio != null && !hamsterController.DeathAudio.isPlaying)
+        if (UISoundManager.GetInstance().HamsterDeath != null && !UISoundManager.GetInstance().HamsterDeath.isPlaying)
         {
-            hamsterController.DeathAudio.Play();
+            UISoundManager.GetInstance().HamsterDeath.Play();
         }
 
         hamsterController.SetVisibility(true);

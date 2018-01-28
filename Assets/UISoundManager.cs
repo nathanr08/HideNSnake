@@ -14,6 +14,9 @@ public class UISoundManager : MonoBehaviour {
     [SerializeField]
     public AudioSource CharSelectSound;
 
+    [SerializeField]
+    public AudioSource HamsterDeath;
+
     private static UISoundManager m_Instance;
     public static UISoundManager GetInstance() { return m_Instance; }
 
