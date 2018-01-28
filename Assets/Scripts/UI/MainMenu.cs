@@ -29,33 +29,33 @@ public class MainMenu : MonoBehaviour {
 
     public void Update()
     {
-        if(selectTimer <= selectTime)
-        {
-            selectTimer += Time.deltaTime;
-        }
+        //if(selectTimer <= selectTime)
+        //{
+        //    selectTimer += Time.deltaTime;
+        //}
 
-        if (Input.GetAxis(controllable.InputHandles.VerticalAxis) != 0.0f &&
-            selectTimer >= selectTime)
-        {
-            selectTimer = 0.0f;
-            if(highlightedButton == startGameButton)
-            {
-                highlightedButton = exitButton;
-            }
-            else
-            {
-                highlightedButton = startGameButton;
-            }
-        }
-        else
-        {
-            if(Input.GetButtonDown(controllable.InputHandles.Submit))
-            {
-                highlightedButton.onClick.Invoke();
-            }
-        }
+        //if (Input.GetAxis(controllable.InputHandles.VerticalAxis) != 0.0f &&
+        //    selectTimer >= selectTime)
+        //{
+        //    selectTimer = 0.0f;
+        //    if(highlightedButton == startGameButton)
+        //    {
+        //        highlightedButton = exitButton;
+        //    }
+        //    else
+        //    {
+        //        highlightedButton = startGameButton;
+        //    }
+        //}
+        //else
+        //{
+        //    if(Input.GetButtonDown(controllable.InputHandles.Submit))
+        //    {
+        //        highlightedButton.onClick.Invoke();
+        //    }
+        //}
 
-        highlightedButton.Select();
+        //highlightedButton.Select();
     }
 
     public void StartButtonClicked()
