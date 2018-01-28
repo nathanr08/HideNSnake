@@ -5,8 +5,8 @@ using UnityEngine;
 public class HamsterController : StateController
 {
 
-    public float walkForce = 5000.0f;
-    public float runForce = 10000.0f;
+    public float walkForce = 1012500.0f;
+    public float runForce = 1350000.0f;
     public float runTime = 5.0f;
     public float runCooldownTime = 10.0f;
     public float stunSpeed = 0.0f;

@@ -336,7 +336,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: moveSpeed
-    m_EventTreshold: 8
+    m_EventTreshold: 1022500
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102125639973845878}
   m_Solo: 0
@@ -479,7 +479,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Walk
-  m_Speed: 1.75
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101699050751836948}
@@ -509,7 +509,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Run
-  m_Speed: 3.5
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101707802301029668}
@@ -601,7 +601,7 @@ AnimatorStateMachine:
     m_Position: {x: 324, y: 156, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102125639973845878}
-    m_Position: {x: 300, y: 372, z: 0}
+    m_Position: {x: 300, y: 384, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102307406033523224}
     m_Position: {x: 600, y: 384, z: 0}
