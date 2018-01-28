@@ -98,7 +98,7 @@ public class HamsterController : StateController
                 currState.GetType() != typeof(HamsterRunBehavior))
                 SetVisibility(false);
         }
-
+        //*
         if (0.0f < fadeTimer)
         {
             //print( "Fade Timer: " + fadeTimer );
@@ -128,7 +128,7 @@ public class HamsterController : StateController
                     GetComponent<Renderer>().enabled = false;
                 }
             }
-        }
+        }//*/
         ///////////////////////////////////////////////
         // End Visability                            //
         ///////////////////////////////////////////////
@@ -155,22 +155,25 @@ public class HamsterController : StateController
     {
         print( "set visability " + visibility + " duration " + durration );
         isVisible = visibility;
-        //if( isVisible )
-        //{
-        //    visibilityTimer = 0.0f;
-        //    currVisibilityTime = durration;
-        //    fadeTimer = appearDurration;
-        //    GetComponent<Renderer>().enabled = true;
-        //}
-        //else
-        //{
-        //    fadeTimer = disappearDurration;
-        //}
+        if( isVisible )
+        {
+            visibilityTimer = 0.0f;
+            currVisibilityTime = durration;
+            fadeTimer = 0.1f;//appearDurration;
+            GetComponent<Renderer>().enabled = true;
+        }
+        else
+        {
+            fadeTimer = 0.1f;//disappearDurration;
+        }//*/
+        /*
+        visibilityTimer = 0.0f;
+        currVisibilityTime = durration;
         MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer renderer in renderers)
         {
             renderer.enabled = visibility;
-        }
+        }//*/
         GetComponentInChildren<Text>().enabled = visibility;
     }
 
