@@ -991,10 +991,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114307687570218952, guid: c1ecb4b32a69247458e9e038fc4f795f,
+    - target: {fileID: 136292694288671412, guid: c1ecb4b32a69247458e9e038fc4f795f,
         type: 2}
-      propertyPath: SpeedMultiplier
-      value: 3000000
+      propertyPath: m_Height
+      value: 0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
