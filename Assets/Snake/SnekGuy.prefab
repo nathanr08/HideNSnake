@@ -2422,7 +2422,7 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: -0.0012}
   m_UseSpring: 1
   m_Spring:
-    spring: 500
+    spring: 700
     damper: 0
     targetPosition: 0
   m_UseMotor: 0
@@ -2610,7 +2610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f679e8ed3c108a4aaf510ee77158899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedMultiplier: 500000
+  SpeedMultiplier: 700000
   SonarDistance: 100000
   SonarVisibilyDuration: 4
   SonarCoolDownLength: 8
@@ -2659,7 +2659,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1555513526184562}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.02
   m_Height: 0.07
   m_Direction: 1
