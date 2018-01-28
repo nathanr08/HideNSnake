@@ -51,6 +51,13 @@ public class GameManager : StateController {
 
     public void InitGame(InitGameEvent.InitGameEventArgs e)
     {
+        // Play music!
+        if (MusicManager.GetInstance() != null && MusicManager.GetInstance() != null)
+        {
+            MusicManager.GetInstance().MenuMusic.Stop();
+            MusicManager.GetInstance().GameMusic.Play();
+        }
+
         // spawn characters
         int hamsterSpawnCount = 0;
         for (int i = 0; i < 4; ++i)
