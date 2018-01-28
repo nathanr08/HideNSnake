@@ -5,8 +5,8 @@ using UnityEngine;
 public class HamsterController : StateController
 {
 
-    public float walkSpeed = 50.0f;
-    public float runSpeed = 100.0f;
+    public float walkForce = 5000.0f;
+    public float runForce = 10000.0f;
     public float runTime = 5.0f;
     public float runCooldownTime = 10.0f;
     public float stunSpeed = 0.0f;
@@ -138,7 +138,7 @@ public class HamsterController : StateController
         float xInput = Input.GetAxis(baseControllable.InputHandles.HorizontalAxis);
         float zInput = Input.GetAxis(baseControllable.InputHandles.VerticalAxis);
         Vector3 movementPerSecond = new Vector3(xInput * moveSpeed, 0.0f, zInput * moveSpeed);
-        rBody.MovePosition(transform.position + movementPerSecond * Time.deltaTime);
+        rBody.AddForce(transform.position + movementPerSecond * Time.deltaTime);
 
         this.animator.SetFloat(animMoveSpeed, movementPerSecond.magnitude);
 

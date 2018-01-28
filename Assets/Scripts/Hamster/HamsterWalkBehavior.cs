@@ -20,7 +20,7 @@ public class HamsterWalkBehavior : State {
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         HamsterController hamsterController = ((HamsterController)controller);
         hamsterController.CheckRun();
-        hamsterController.DoMovement(hamsterController.walkSpeed);
+        hamsterController.DoMovement(hamsterController.walkForce);
         
     }
 

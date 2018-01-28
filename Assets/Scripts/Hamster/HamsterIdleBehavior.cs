@@ -15,7 +15,7 @@ public class HamsterIdleBehavior : State {
 
         HamsterController hamsterController = ((HamsterController)controller);
         hamsterController.CheckRun();
-        hamsterController.DoMovement(hamsterController.walkSpeed);
+        hamsterController.DoMovement(hamsterController.walkForce);
 
         // Stop moving sounds
         if (hamsterController.WalkAudio != null && hamsterController.WalkAudio.isPlaying)
