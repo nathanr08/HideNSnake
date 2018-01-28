@@ -27,12 +27,38 @@ public class SnakeGuy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-      Move(MainCamera.transform.up, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.VerticalAxis));
-      Move(MainCamera.transform.right, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.HorizontalAxis));
-		if(Input.GetButtonDown(baseControllable.InputHandles.Action))
+     // Move(MainCamera.transform.up, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.VerticalAxis));
+     // Move(MainCamera.transform.right, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.HorizontalAxis));
+
+
+		if(Input.GetKey(KeyCode.W))
 		{
-         Sonar();
+			Move(MainCamera.transform.up, SpeedMultiplier);
 		}
+		if(Input.GetKey(KeyCode.S))
+		{
+			Move(-MainCamera.transform.up, SpeedMultiplier);
+		}
+
+		if(Input.GetKey(KeyCode.A))
+		{
+			Move(-MainCamera.transform.right, SpeedMultiplier);
+		}
+
+		if(Input.GetKey(KeyCode.D))
+		{
+			Move(MainCamera.transform.right, SpeedMultiplier);
+		}
+
+
+		//if(Input.GetButtonDown(baseControllable.InputHandles.Action))
+		//{
+        // Sonar();
+		//}
+
+		if(MyRigidBody.velocity.magnitude > 1.0f)
+		transform.forward = MyRigidBody.velocity.normalized;
+
 	}
 
    void Sonar( )
@@ -44,7 +70,6 @@ public class SnakeGuy : MonoBehaviour {
 	{
 		//MyRigidBody.AddRelativeTorque(new Vector3(0.0f,10.0f,0.0f));
 		MyRigidBody.AddForce(Direction * force);
-		transform.forward = MyRigidBody.velocity.normalized;
 
 	}
 }

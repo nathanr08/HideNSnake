@@ -371,21 +371,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1336351075733752
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4231892862365170}
-  m_Layer: 0
-  m_Name: Root
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1341686561012420
 GameObject:
   m_ObjectHideFlags: 1
@@ -643,6 +628,7 @@ GameObject:
   - component: {fileID: 54448209577018828}
   - component: {fileID: 114307687570218952}
   - component: {fileID: 114958011900758288}
+  - component: {fileID: 136292694288671412}
   m_Layer: 0
   m_Name: SnekGuy
   m_TagString: Untagged
@@ -659,6 +645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4584615869557050}
   - component: {fileID: 137062512691527896}
+  - component: {fileID: 64429318079458548}
   m_Layer: 0
   m_Name: Monty_Body 1
   m_TagString: Untagged
@@ -1115,7 +1102,6 @@ GameObject:
   - component: {fileID: 81578260687026776}
   - component: {fileID: 82181899317654508}
   - component: {fileID: 135196966532227524}
-  - component: {fileID: 135344841937957510}
   m_Layer: 8
   m_Name: SnekSnoot
   m_TagString: Untagged
@@ -1285,7 +1271,7 @@ Transform:
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 4029219307514258}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4029219307514258
 Transform:
@@ -1294,10 +1280,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1555513526184562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.07, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: -2.89}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
-  - {fileID: 4231892862365170}
   - {fileID: 4371226581237620}
   - {fileID: 4550699477716418}
   - {fileID: 4020253569223692}
@@ -1498,19 +1483,6 @@ Transform:
   m_Father: {fileID: 4606186172417658}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4231892862365170
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1336351075733752}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4029219307514258}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4231911678848822
 Transform:
   m_ObjectHideFlags: 1
@@ -1630,7 +1602,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1527013266826766}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: -0.0012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4997190852905774}
@@ -1663,7 +1635,7 @@ Transform:
   - {fileID: 4084726253250936}
   - {fileID: 4320490684644730}
   m_Father: {fileID: 4029219307514258}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4373451516397844
 Transform:
@@ -1833,7 +1805,7 @@ Transform:
   - {fileID: 4811715544004688}
   - {fileID: 4125265836271788}
   m_Father: {fileID: 4029219307514258}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4552609114233226
 Transform:
@@ -2414,7 +2386,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1555513526184562}
   serializedVersion: 2
-  m_Mass: 3000
+  m_Mass: 200
   m_Drag: 10
   m_AngularDrag: 10
   m_UseGravity: 0
@@ -2435,7 +2407,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!59 &59389225670130192
 HingeJoint:
@@ -2445,25 +2417,25 @@ HingeJoint:
   m_GameObject: {fileID: 1527013266826766}
   m_ConnectedBody: {fileID: 54448209577018828}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  m_UseSpring: 0
+  m_ConnectedAnchor: {x: 0, y: 0, z: -0.0012000012}
+  m_UseSpring: 1
   m_Spring:
-    spring: 0
-    damper: 0
+    spring: 500
+    damper: 30
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_Limits:
     min: 0
     max: 0
     bounciness: 0
-    bounceMinVelocity: 0.2
+    bounceMinVelocity: 0
     contactDistance: 0.1
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
@@ -2471,6 +2443,20 @@ HingeJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!64 &64429318079458548
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1575939292966828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!81 &81578260687026776
 AudioListener:
   m_ObjectHideFlags: 1
@@ -2631,7 +2617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f679e8ed3c108a4aaf510ee77158899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedMultiplier: 500000
+  SpeedMultiplier: 50000
 --- !u!114 &114958011900758288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2652,22 +2638,23 @@ SphereCollider:
   m_GameObject: {fileID: 1934393773225506}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1.75
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135344841937957510
-SphereCollider:
+--- !u!136 &136292694288671412
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1934393773225506}
+  m_GameObject: {fileID: 1555513526184562}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.02
+  m_Height: 0.05
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.03, z: 0}
 --- !u!137 &137062512691527896
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
