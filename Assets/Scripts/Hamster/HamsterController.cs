@@ -26,6 +26,8 @@ public class HamsterController : StateController
     [SerializeField]
     private float visibilityTimer = 0.0f;
 
+    private float currVisibilityTime = 0.0f;
+
     private Rigidbody rBody;
     private MeshRenderer meshRenderer;
     private BaseControllable baseControllable;
@@ -69,6 +71,7 @@ public class HamsterController : StateController
 
         runCooldownTimer = runCooldownTime;
         SetVisibility(true);
+        currVisibilityTime = initialVisibilityTime;
     }
 
     public void Update()
@@ -83,11 +86,11 @@ public class HamsterController : StateController
             return;
         }
 
-        if (visibilityTimer < initialVisibilityTime)
+        if (visibilityTimer < currVisibilityTime)
         {
             visibilityTimer += Time.deltaTime;
 
-            if (visibilityTimer >= initialVisibilityTime &&
+            if (visibilityTimer >= currVisibilityTime &&
                 currState.GetType() != typeof(HamsterRunBehavior))
                 SetVisibility(false);
         }
@@ -101,7 +104,7 @@ public class HamsterController : StateController
             {
                 alpha /= appearDurration;
                 alpha = 1.0f - alpha;
-                print( "alpha: " + alpha + "fade: " + fadeTimer );
+                //print( "alpha: " + alpha + "fade: " + fadeTimer );
             }
             else
             {
@@ -146,11 +149,12 @@ public class HamsterController : StateController
 
     public void SetVisibility(bool visibility, float durration = 0.0f)
     {
-        print( "set visability " + visibility );
+        print( "set visability " + visibility + " duration " + durration );
         isVisible = visibility;
         if( isVisible )
         {
-            visibilityTimer = durration;
+            visibilityTimer = 0.0f;
+            currVisibilityTime = durration;
             fadeTimer = appearDurration;
             GetComponent<Renderer>().enabled = true;
         }
