@@ -9,7 +9,7 @@ public class SnakeGuy : MonoBehaviour {
 
 	Camera MainCamera;
 
-	float SpeedMultiplier;
+	float SpeedMultiplier = 1000.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +18,7 @@ public class SnakeGuy : MonoBehaviour {
 
 		MainCamera = GameObject.FindObjectOfType<Camera>();
 
-		SpeedMultiplier = 10.0f;
+
 	}
 	
 	// Update is called once per frame
@@ -43,10 +43,14 @@ public class SnakeGuy : MonoBehaviour {
 		{
 			Move(-MainCamera.transform.up, 1.0f * SpeedMultiplier);
 		}
+
 	}
 
 	void Move(Vector3 Direction, float force)
 	{
+		//MyRigidBody.AddRelativeTorque(new Vector3(0.0f,10.0f,0.0f));
 		MyRigidBody.AddForce(Direction * force);
+		transform.forward = MyRigidBody.velocity.normalized;
+
 	}
 }
