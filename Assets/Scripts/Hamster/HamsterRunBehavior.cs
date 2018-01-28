@@ -37,12 +37,12 @@ public class HamsterRunBehavior : State {
         
         HamsterController hamsterController = ((HamsterController)controller);
         runTimer += Time.deltaTime;
-        Debug.Log("@@@@@@@@@@@@@@@" + runTimer);
+        //Debug.Log("@@@@@@@@@@@@@@@" + runTimer);
         if (runTimer <= 1.5)
         {
             float MoveSpeed = Mathf.Lerp(hamsterController.walkSpeed, hamsterController.runSpeed, runTimer / 1.5f);
             hamsterController.DoMovement(MoveSpeed);
-            Debug.Log("@@@@@@@@@@@@@@@" + MoveSpeed);
+            //Debug.Log("@@@@@@@@@@@@@@@" + MoveSpeed);
         }
        
         if (runTimer < hamsterController.runTime)
