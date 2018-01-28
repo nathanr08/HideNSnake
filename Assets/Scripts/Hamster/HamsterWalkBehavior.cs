@@ -5,21 +5,23 @@ using UnityEngine;
 public class HamsterWalkBehavior : State {
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-    //  base.OnStateEnter(animator, stateInfo, layerIndex);
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        base.OnStateEnter(animator, stateInfo, layerIndex);
+        HamsterController hamsterController = ((HamsterController)controller);
+        // Play the walk sound
+        if (hamsterController.WalkAudio != null && !hamsterController.WalkAudio.isPlaying)
+        {
+            hamsterController.WalkAudio.Play();
+        }
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         HamsterController hamsterController = ((HamsterController)controller);
         hamsterController.CheckRun();
         hamsterController.DoMovement(hamsterController.walkSpeed);
-
-        // Play the walk sound
-        if (hamsterController.WalkAudio != null && !hamsterController.WalkAudio.isPlaying)
-        {
-            hamsterController.WalkAudio.Play();
-        }
+        
     }
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state

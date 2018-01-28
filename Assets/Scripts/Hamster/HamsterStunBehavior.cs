@@ -10,7 +10,13 @@ public class HamsterStunBehavior : State {
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         base.OnStateEnter(animator, stateInfo, layerIndex);
         stunTimer = 0.0f;
-	}
+
+        HamsterController hamsterController = ((HamsterController)controller);
+        if (hamsterController.FreezeAudio != null && !hamsterController.FreezeAudio.isPlaying)
+        {
+            hamsterController.FreezeAudio.Play();
+        }
+    }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

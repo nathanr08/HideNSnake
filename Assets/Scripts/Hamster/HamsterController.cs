@@ -34,7 +34,8 @@ public class HamsterController : StateController
     public AudioSource WalkAudio;
     public AudioSource RunAudio;
     public AudioSource RunAudioEnd;
-    public AudioSource WalkFastAudio;    
+    public AudioSource WalkFastAudio;
+    public AudioSource FreezeAudio;
 
     #region animVars
     public static string animHealth = "playerHealth";
