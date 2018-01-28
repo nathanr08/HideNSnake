@@ -117,7 +117,7 @@ public class HamsterController : StateController
             rBody.MoveRotation(Quaternion.LookRotation(lookDir));
     }
 
-    public void SetVisibility(bool visibility)
+    public void SetVisibility(bool visibility, float durration = 100.0f)
     {
         print( "set visability " + visibility );
         isVisible = visibility;
