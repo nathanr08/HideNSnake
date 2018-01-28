@@ -44,6 +44,6 @@ public class MenuManager : MonoBehaviour
     }
     public void InitGameEventHandler( object sender, InitGameEvent.InitGameEventArgs e )
     {
-
+        GameManager.Instance.InitGame(e);
     }
 }

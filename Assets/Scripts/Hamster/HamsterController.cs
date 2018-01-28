@@ -74,7 +74,11 @@ public class HamsterController : StateController {
     public void SetVisibility(bool visibility)
     {
         isVisible = visibility;
-        meshRenderer.enabled = isVisible;   
+        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
+        foreach(MeshRenderer renderer in renderers)
+        {
+            renderer.enabled = visibility;
+        }
     }
 
     public void CheckRun()
