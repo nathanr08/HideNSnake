@@ -13,12 +13,18 @@ public class Shakeable : MonoBehaviour {
     private float jiggle_factor = 5.0f;
     private Vector3 start_scale;
 
-	private MeshRenderer MyMeshRend;
 
     public virtual void Start()
     {
-		MyMeshRend = GetComponent<MeshRenderer>();
+
 		audioSource = GetComponent<AudioSource>();
+
+		if(audioSource == null)
+		{
+			audioSource = gameObject.AddComponent<AudioSource>();
+			audioSource.clip = (AudioClip)Resources.Load("Audio/Wobble",typeof(AudioClip));
+		}
+
         start_scale = transform.localScale;
     }
 
