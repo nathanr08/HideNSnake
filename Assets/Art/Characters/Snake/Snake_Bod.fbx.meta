@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: a1a4b6cc1c3354d4da6e57c4b7efcdf5
+timeCreated: 1517106239
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Body1
+    100002: Body10
+    100004: Body11
+    100006: Body12
+    100008: Body13
+    100010: Body14
+    100012: Body15
+    100014: Body16
+    100016: Body17
+    100018: Body18
+    100020: Body19
+    100022: Body2
+    100024: Body20
+    100026: Body21
+    100028: Body22
+    100030: Body23
+    100032: Body24
+    100034: Body25
+    100036: Body26
+    100038: Body27
+    100040: Body28
+    100042: Body29
+    100044: Body3
+    100046: Body30
+    100048: Body31
+    100050: Body32
+    100052: Body33
+    100054: Body34
+    100056: Body35
+    100058: Body36
+    100060: Body37
+    100062: Body38
+    100064: Body39
+    100066: Body4
+    100068: Body40
+    100070: Body41
+    100072: Body42
+    100074: Body43
+    100076: Body44
+    100078: Body45
+    100080: Body46
+    100082: Body47
+    100084: Body48
+    100086: Body49
+    100088: Body5
+    100090: Body50
+    100092: Body51
+    100094: Body52
+    100096: Body53
+    100098: Body54
+    100100: Body55
+    100102: Body6
+    100104: Body7
+    100106: Body8
+    100108: Body9
+    100110: Monty_Body
+    100112: Monty_Body 1
+    100114: Monty_Group
+    100116: Root
+    100118: //RootNode
+    400000: Body1
+    400002: Body10
+    400004: Body11
+    400006: Body12
+    400008: Body13
+    400010: Body14
+    400012: Body15
+    400014: Body16
+    400016: Body17
+    400018: Body18
+    400020: Body19
+    400022: Body2
+    400024: Body20
+    400026: Body21
+    400028: Body22
+    400030: Body23
+    400032: Body24
+    400034: Body25
+    400036: Body26
+    400038: Body27
+    400040: Body28
+    400042: Body29
+    400044: Body3
+    400046: Body30
+    400048: Body31
+    400050: Body32
+    400052: Body33
+    400054: Body34
+    400056: Body35
+    400058: Body36
+    400060: Body37
+    400062: Body38
+    400064: Body39
+    400066: Body4
+    400068: Body40
+    400070: Body41
+    400072: Body42
+    400074: Body43
+    400076: Body44
+    400078: Body45
+    400080: Body46
+    400082: Body47
+    400084: Body48
+    400086: Body49
+    400088: Body5
+    400090: Body50
+    400092: Body51
+    400094: Body52
+    400096: Body53
+    400098: Body54
+    400100: Body55
+    400102: Body6
+    400104: Body7
+    400106: Body8
+    400108: Body9
+    400110: Monty_Body
+    400112: Monty_Body 1
+    400114: Monty_Group
+    400116: Root
+    400118: //RootNode
+    2100000: lambert1
+    4300000: Monty_Body
+    9500000: //RootNode
+    13700000: Monty_Body 1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
