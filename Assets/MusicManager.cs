@@ -10,6 +10,9 @@ public class MusicManager : MonoBehaviour {
     [SerializeField]
     public AudioSource GameMusic;
 
+    [SerializeField]
+    public AudioSource Fanfare;
+
     private static MusicManager m_Instance;
     public static MusicManager GetInstance() { return m_Instance; }
 

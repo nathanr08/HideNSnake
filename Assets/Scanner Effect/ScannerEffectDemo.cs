@@ -29,24 +29,23 @@ public class ScannerEffectDemo : MonoBehaviour
 			ScanDistance += Time.deltaTime * 50;
 			foreach (HamsterController s in _scannables)
 			{
+				if(s.bWasScanned == true)
+					continue; // Next Hamster
+				
 				if(Vector3.Distance(ScannerOrigin.position, s.transform.position) < ScanDistance && CloseDistance > ScanDistance )
 				{
+					s.bWasScanned = true;
 					s.Freeze();
 					s.SetVisibility(true, 4.0f);
 				}
-				else if (Vector3.Distance(ScannerOrigin.position, s.transform.position) < ScanDistance && Vector3.Distance(ScannerOrigin.position, s.transform.position) > ScanDistance)
+				else if (Vector3.Distance(ScannerOrigin.position, s.transform.position) < ScanDistance)
 				{
+					s.bWasScanned = true;
 					s.SetVisibility(true, 4.0f);
 				}
-				 
 			}
 		}
-
-		if (Input.GetKeyDown(KeyCode.C))
-		{
-			_scanning = true;
-			ScanDistance = 0;
-		}
+			
 	}
 	// End Demo Code
 
@@ -59,6 +58,12 @@ public class ScannerEffectDemo : MonoBehaviour
         {
             ScannerOrigin.position = Snake.position;
         }
+
+		foreach (HamsterController s in _scannables)
+		{
+			s.bWasScanned = false;
+		}
+
 	}
 	void OnEnable()
 	{

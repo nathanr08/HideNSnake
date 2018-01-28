@@ -101,6 +101,7 @@ public class GameManager : StateController {
         {
             Destroy(snake);
         }
+
     }
 
     public void SetSnakePlayerInput(bool enabled)
