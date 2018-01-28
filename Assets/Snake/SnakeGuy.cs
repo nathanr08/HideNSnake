@@ -9,7 +9,10 @@ public class SnakeGuy : MonoBehaviour {
 
 	Camera MainCamera;
 
+   [SerializeField]
 	float SpeedMultiplier = 100000.0f;
+
+   BaseControllable baseControllable;
 
 	// Use this for initialization
 	void Start () {
@@ -18,33 +21,24 @@ public class SnakeGuy : MonoBehaviour {
 
 		MainCamera = GameObject.FindObjectOfType<Camera>();
 
-
+      baseControllable = GetComponent<BaseControllable>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		if(Input.GetKey(KeyCode.W))
+      Move(MainCamera.transform.up, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.VerticalAxis));
+      Move(MainCamera.transform.right, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.HorizontalAxis));
+		if(Input.GetButtonDown(baseControllable.InputHandles.Action))
 		{
-			Move(MainCamera.transform.up, 1.0f * SpeedMultiplier);
+         Sonar();
 		}
-
-		if(Input.GetKey(KeyCode.D))
-		{
-			Move(MainCamera.transform.right, 1.0f * SpeedMultiplier);
-		}
-
-		if(Input.GetKey(KeyCode.A))
-		{
-			Move(-MainCamera.transform.right, 1.0f * SpeedMultiplier);
-		}
-
-		if(Input.GetKey(KeyCode.S))
-		{
-			Move(-MainCamera.transform.up, 1.0f * SpeedMultiplier);
-		}
-
 	}
+
+   void Sonar( )
+   {
+
+   }
 
 	void Move(Vector3 Direction, float force)
 	{
