@@ -40,19 +40,19 @@ public class HamsterRunBehavior : State {
         //Debug.Log("@@@@@@@@@@@@@@@" + runTimer);
         if (runTimer <= 1.5)
         {
-            float MoveSpeed = Mathf.Lerp(hamsterController.walkSpeed, hamsterController.runSpeed, runTimer / 1.5f);
+            float MoveSpeed = Mathf.Lerp(hamsterController.walkForce, hamsterController.runForce, runTimer / 1.5f);
             hamsterController.DoMovement(MoveSpeed);
             //Debug.Log("@@@@@@@@@@@@@@@" + MoveSpeed);
         }
        
         if (runTimer < hamsterController.runTime)
         {
-            hamsterController.DoMovement(hamsterController.runSpeed);
+            hamsterController.DoMovement(hamsterController.runForce);
 
             // Play the wind down sound
             if (hamsterController.runTime - runTimer <= 1.2)
             {
-                hamsterController.DoMovement(Mathf.Lerp(hamsterController.runSpeed, hamsterController.walkSpeed, runTimer / hamsterController.runTime));
+                hamsterController.DoMovement(Mathf.Lerp(hamsterController.runForce, hamsterController.walkForce, runTimer / hamsterController.runTime));
                 if (hamsterController.runTime - runTimer > 0.4 && hamsterController.RunAudioEnd != null && !hamsterController.RunAudioEnd.isPlaying)
                 {
                     hamsterController.RunAudioEnd.PlayDelayed(0.1f);
@@ -62,7 +62,7 @@ public class HamsterRunBehavior : State {
         }
         else
         {
-            hamsterController.DoMovement(hamsterController.walkSpeed);
+            hamsterController.DoMovement(hamsterController.walkForce);
         }
     }
 
