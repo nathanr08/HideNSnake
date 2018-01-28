@@ -642,6 +642,7 @@ GameObject:
   - component: {fileID: 95962366640540938}
   - component: {fileID: 54448209577018828}
   - component: {fileID: 114307687570218952}
+  - component: {fileID: 114958011900758288}
   m_Layer: 0
   m_Name: SnekGuy
   m_TagString: Untagged
@@ -1293,7 +1294,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1555513526184562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.07, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4231892862365170}
@@ -2631,6 +2632,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeedMultiplier: 1000
+--- !u!114 &114958011900758288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1555513526184562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9816a22fb7c1a4ab831bdc50bce0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerNumber: 1
 --- !u!135 &135196966532227524
 SphereCollider:
   m_ObjectHideFlags: 1
