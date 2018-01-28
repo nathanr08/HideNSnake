@@ -31,11 +31,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _CloseFarBlendDistance: 10
+    - _CloseFarBlendDistance: 20
     - _CloseScanDistance: 30
     - _HBarVisibility: 0.2
     - _LeadSharp: 25
-    - _ScanDistance: 0
+    - _ScanDistance: 299.15872
     - _ScanWidth: 7
     - _Width: 16
     m_Colors:

@@ -110,12 +110,14 @@ Shader "Hidden/ScannerEffect"
 
 				float dist = distance(wsPos, _WorldSpaceScannerPos);
 
-				if (dist < _CloseScanDistance && dist > _CloseScanDistance - _ScanWidth && linearDepth < 1)
+				if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && _ScanDistance < _CloseScanDistance && linearDepth < 1)
 				{
-					float closeDiff = 1 - (_ScanDistance - dist) / (_ScanWidth);
-					half4 closeEdge = lerp(_CloseMidColor, _LeadColor, pow(closeDiff, _LeadSharp));
-					closeScannerCol = lerp(_CloseTrailColor, closeEdge, closeDiff) + horizBars(i.uv) * _HBarColor;
-					closeScannerCol *= closeDiff;
+					float diff = 1 - (_ScanDistance - dist) / (_ScanWidth);
+					half4 closeEdge = lerp(_CloseMidColor, _LeadColor, pow(diff, _LeadSharp));
+					closeScannerCol = lerp(_CloseTrailColor, closeEdge, diff) + horizBars(i.uv) * _HBarColor;
+					closeScannerCol *= diff;
+
+					return col + closeScannerCol;
 					//
 					//float diff = 1 - (_ScanDistance - dist) / (_ScanWidth);
 					//half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
@@ -125,21 +127,21 @@ Shader "Hidden/ScannerEffect"
 				}
 				else if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && linearDepth < 1)
 				{
-					//float closeDiff = 1 - (_ScanDistance - dist) / (_ScanWidth);
-					//half4 closeEdge = lerp(_CloseMidColor, _LeadColor, pow(closeDiff, _LeadSharp));
-					//closeScannerCol = lerp(_CloseTrailColor, closeEdge, closeDiff) + horizBars(i.uv) * _HBarColor;
-					//closeScannerCol *= closeDiff;
+					float closeDiff = 1 - (_ScanDistance - dist) / (_ScanWidth);
+					half4 closeEdge = lerp(_CloseMidColor, _LeadColor, pow(closeDiff, _LeadSharp));
+					closeScannerCol = lerp(_CloseTrailColor, closeEdge, closeDiff) + horizBars(i.uv) * _HBarColor;
+					closeScannerCol *= closeDiff;
 					//closeScannerCol *= ((clamp( ( (_CloseScanDistance+_CloseFarBlendDistance) -_ScanDistance ) ,0,_CloseFarBlendDistance) / _CloseFarBlendDistance) -1) * -1;
 
 					float diff = 1 - (_ScanDistance - dist) / (_ScanWidth);
 					half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
 					scannerCol = lerp(_TrailColor, edge, diff) + horizBars(i.uv) * _HBarColor;
 					scannerCol *= diff;
-					//scannerCol *= clamp((_ScanDistance - _CloseScanDistance),0,_CloseFarBlendDistance) / _CloseFarBlendDistance;
+					scannerCol *= clamp((_ScanDistance - _CloseScanDistance),0,_CloseFarBlendDistance) / _CloseFarBlendDistance;
 
 				}
 
-				return col + scannerCol;
+				return col + scannerCol + closeScannerCol;
 			}
 			ENDCG
 		}

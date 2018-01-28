@@ -5,6 +5,7 @@ using System.Collections;
 public class ScannerEffectDemo : MonoBehaviour
 {
 	public Transform ScannerOrigin;
+	public Transform Snake;
 	public Material EffectMaterial;
 	public float ScanDistance = 0;
 	public float CloseDistance = 30;
@@ -45,19 +46,6 @@ public class ScannerEffectDemo : MonoBehaviour
 			_scanning = true;
 			ScanDistance = 0;
 		}
-
-		if (Input.GetMouseButtonDown(0))
-		{
-			Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit;
-
-			if (Physics.Raycast(ray, out hit))
-			{
-				_scanning = true;
-				ScanDistance = 0;
-				ScannerOrigin.position = hit.point;
-			}
-		}
 	}
 	// End Demo Code
 
@@ -66,7 +54,7 @@ public class ScannerEffectDemo : MonoBehaviour
 	{
 		_scanning = true;
 		ScanDistance = 0;
-		ScannerOrigin.position = ScanPos;
+		ScannerOrigin.position = Snake.position;
 	}
 	void OnEnable()
 	{
