@@ -46,7 +46,7 @@ public class SnakeGuy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-         Hack, if the game has not started, bail
+        //Hack, if the game has not started, bail
         if (GameManager.Instance == null || !GameManager.Instance.gameInProgress)
         {
             return;
