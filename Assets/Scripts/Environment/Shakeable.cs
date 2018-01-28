@@ -14,15 +14,37 @@ public class Shakeable : MonoBehaviour {
     private Vector3 start_scale;
 
 
+	public bool AddTriggerMeshCollider = false;
+	private MeshCollider MCol;
+
+
     public virtual void Start()
     {
+
+		
+			MCol = gameObject.AddComponent<MeshCollider>();
+
+			MCol.convex = true;
+			MCol.isTrigger = true;
+
+		if(AddTriggerMeshCollider)
+		{
+			MCol.inflateMesh = true;
+
+			MCol.skinWidth = 1.0f;
+
+			MCol = gameObject.AddComponent<MeshCollider>();
+			MCol.convex = true;
+
+		}
+			
 
 		audioSource = GetComponent<AudioSource>();
 
 		if(audioSource == null)
 		{
 			audioSource = gameObject.AddComponent<AudioSource>();
-			audioSource.clip = (AudioClip)Resources.Load("Audio/Wobble",typeof(AudioClip));
+			audioSource.clip = (AudioClip)Resources.Load("Wobble",typeof(AudioClip));
 		}
 
         start_scale = transform.localScale;
@@ -30,6 +52,9 @@ public class Shakeable : MonoBehaviour {
 
     public void OnTriggerStay(Collider other)
     {
+		if(other.tag == "Prop")
+			return;
+
         // if its not in the list make a list entry for it
         //print( other.name );
         if( !movers.ContainsKey( other.name ) )
