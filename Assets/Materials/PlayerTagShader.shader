@@ -65,7 +65,7 @@ Shader "UI/Default_OverlayNoZTest"
     };
 
     fixed4 _Color;
-    fixed4 _TextureSampleAdd; //Added for font color support
+    fixed4 _TextureSampleAdd; //Added for font color support // extra comment
 
     v2f vert(appdata_t IN)
     {
