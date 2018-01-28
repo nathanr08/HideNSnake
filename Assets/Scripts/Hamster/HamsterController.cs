@@ -30,6 +30,9 @@ public class HamsterController : StateController
     private MeshRenderer meshRenderer;
     private BaseControllable baseControllable;
 
+    [SerializeField]
+    public AudioSource WalkAudio;
+
     #region animVars
     public static string animHealth = "playerHealth";
     public static string animMoveSpeed = "moveSpeed";
