@@ -747,9 +747,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   currState: {fileID: 0}
-  walkSpeed: 50
-  runSpeed: 100
-  runTime: 5
+  walkSpeed: 7
+  runSpeed: 35
+  runTime: 3
   runCooldownTime: 10
   stunSpeed: 0
   initialVisibilityTime: 500
