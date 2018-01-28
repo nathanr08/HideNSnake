@@ -52,7 +52,13 @@ public class SetUpTheCharacterJoints : MonoBehaviour {
 			ChildCJoint.useLimits = ExampleCJoint.useLimits;
 			ChildCJoint.useMotor = ExampleCJoint.useMotor;
 			ChildCJoint.useSpring = ExampleCJoint.useSpring;
-			ChildCJoint.spring = ExampleCJoint.spring;
+
+			JointSpring asd = ExampleCJoint.spring;
+			asd.spring = ExampleCJoint.spring.spring + 10.0f;
+			ChildCJoint.spring = asd;
+
+
+
 			ChildCJoint.motor = ExampleCJoint.motor;
 			ChildCJoint.limits = ExampleCJoint.limits;
 			ChildCJoint.enablePreprocessing = ExampleCJoint.enablePreprocessing;
