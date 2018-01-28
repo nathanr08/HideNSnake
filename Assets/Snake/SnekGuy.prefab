@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 136292694288671412}
   m_Layer: 0
   m_Name: SnekGuy
-  m_TagString: Untagged
+  m_TagString: Snake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1772,8 +1772,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373650449861196}
   m_LocalRotation: {x: 0, y: -0, z: -0.15106009, w: 0.9885246}
-  m_LocalPosition: {x: -0.0038687594, y: 0.00006736026, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.01, y: 0.0019, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4633698762169420}
   m_Father: {fileID: 4231911678848822}
@@ -1924,7 +1924,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644767306352550}
   m_LocalRotation: {x: -4.2417004e-15, y: -3.5013282e-16, z: 0.0822656, w: 0.99661046}
-  m_LocalPosition: {x: -0.0028645738, y: -2.7755575e-19, z: 0}
+  m_LocalPosition: {x: -0.0022, y: 0.0001, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4846800353875242}
@@ -2618,6 +2618,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpeedMultiplier: 3000000
+  SonarDistance: 100000
+  SonarVisibilyDuration: 4
 --- !u!114 &114958011900758288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2652,7 +2654,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.02
-  m_Height: 0.05
+  m_Height: 0.07
   m_Direction: 1
   m_Center: {x: 0, y: 0.03, z: 0}
 --- !u!137 &137062512691527896
@@ -2669,7 +2671,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1a4b6cc1c3354d4da6e57c4b7efcdf5, type: 3}
+  - {fileID: 2100000, guid: 79cb5a137d3d2d943bf4049c3f3f1198, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2930,7 +2932,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fd9aecc3c18fadd41ab94a9c100b8bc1, type: 3}
+  - {fileID: 2100000, guid: 9d0176d9f04741449b17703968f47bdb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2986,7 +2988,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fd9aecc3c18fadd41ab94a9c100b8bc1, type: 3}
+  - {fileID: 2100000, guid: 79cb5a137d3d2d943bf4049c3f3f1198, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
