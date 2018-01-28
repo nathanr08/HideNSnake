@@ -629,7 +629,8 @@ MonoBehaviour:
   exitButton: {fileID: 403570140}
   highlightedButton: {fileID: 81005819}
   controllable: {fileID: 0}
-  selectTime: 0.5
+  selectTime: 1
+  selectTimer: 0
 --- !u!114 &643761705
 MonoBehaviour:
   m_ObjectHideFlags: 0

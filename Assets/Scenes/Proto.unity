@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042c886f80739b643a67c36b5b19c95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 4
+  playerNumber: 0
   iconPanel: {fileID: 146836149}
   deadIcon: {fileID: 1243199920}
   playerIcon: {fileID: 1410091172}
