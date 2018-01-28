@@ -27,9 +27,6 @@ public class GameManager : StateController {
     public GameObject snakePrefab;
     public GameObject hamsterPrefab;
 
-    public PlayerIcon[] playerIcons;
-    public GameObject playerIconPanel;
-
     public static string snakePlayer = "Snake";
     public static string hamsterPlayer = "Hamster";
     public static string animStartCountdownTrigger = "StartCountdown";
@@ -81,7 +78,22 @@ public class GameManager : StateController {
                 {
                     player = Instantiate(hamsterPrefab);
                     player.transform.position = hamsterSpawns[hamsterSpawnCount].transform.position;
-                    Color pColor = GetPlayerColor(i + 1);
+                    Color pColor = new Color(1,1,1);
+                    switch( i+1 )
+                    {
+                        case 1: // RED
+                            pColor = Color.red;
+                            break;
+                        case 2: // BLUE
+                            pColor = Color.blue;
+                            break;
+                        case 3: // GREEN
+                            pColor = Color.green;
+                            break;
+                        case 4: // YELLOW
+                            pColor = Color.yellow;
+                            break;
+                    }
                     player.GetComponentInChildren<Text>().enabled = true;
                     player.GetComponentInChildren<Text>().color = pColor;
                     ++hamsterSpawnCount;
@@ -89,11 +101,7 @@ public class GameManager : StateController {
                 BaseControllable control = player.GetComponent<BaseControllable>();
                 control.SetPlayerInputNumber(i + 1);
             }
-
-            // set icons
-            playerIcons[i].SetDead(false);
-            playerIcons[i].SetPlayerRole(e.playerDataList[i]);
-            playerIconPanel.SetActive(true);
+            
         }
         animator.SetTrigger(animStartCountdownTrigger);
     }
@@ -141,27 +149,5 @@ public class GameManager : StateController {
     public void BackToMenu()
     {
         animator.SetTrigger(animBackToMenuTrigger);
-        playerIconPanel.SetActive(false);
-    }
-
-    public Color GetPlayerColor(int playerNumber)
-    {
-        Color pColor = new Color(1, 1, 1);
-        switch (playerNumber)
-        {
-            case 1: // RED
-                pColor = Color.red;
-                break;
-            case 2: // BLUE
-                pColor = Color.blue;
-                break;
-            case 3: // GREEN
-                pColor = Color.green;
-                break;
-            case 4: // YELLOW
-                pColor = Color.yellow;
-                break;
-        }
-        return pColor;
     }
 }
