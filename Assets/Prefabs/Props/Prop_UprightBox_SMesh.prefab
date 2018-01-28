@@ -38,7 +38,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4967138143470898}
   - component: {fileID: 95313862073958788}
-  - component: {fileID: 114117227455364108}
   m_Layer: 0
   m_Name: Prop_UprightBox_SMesh
   m_TagString: Untagged
@@ -131,20 +130,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114117227455364108
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630515538901548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e468887bdbc61a041989742f5eae2c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jiggle_speed: 5
-  jiggle_factor: 5
-  AddTriggerMeshCollider: 0
 --- !u!114 &114198555541531806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,4 +143,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jiggle_speed: 5
   jiggle_factor: 5
-  AddTriggerMeshCollider: 0
+  AddTriggerMeshCollider: 1

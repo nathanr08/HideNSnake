@@ -114,4 +114,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jiggle_speed: 5
   jiggle_factor: 5
-  AddTriggerMeshCollider: 0
+  AddTriggerMeshCollider: 1
