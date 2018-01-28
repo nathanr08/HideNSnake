@@ -20,6 +20,11 @@ public class SnakeGuy : MonoBehaviour {
 	[SerializeField]
 	float SonarVisibilyDuration = 4.0f;
 
+	[SerializeField]
+	float SonarCoolDownLength = 8.0f;
+
+	private float SonarCoolDown = 0.0f;
+
    BaseControllable baseControllable;
 
    [SerializeField]
@@ -72,29 +77,22 @@ public class SnakeGuy : MonoBehaviour {
 		if(MyRigidBody.velocity.magnitude > 1.0f)
 		transform.forward = MyRigidBody.velocity.normalized;
 
+		SonarCoolDown -= Time.deltaTime;
 	}
 
    void Sonar( )
    {
-
+		if(SonarCoolDown > 0)
+			return;
+		
 		ScannerEffect.ScanAtPosition(transform.position);
 
         if (UseFreezeAudio != null && !UseFreezeAudio.isPlaying)
         {
             UseFreezeAudio.Play();
         }
-        //foreach(GameObject HM in GameObject.FindGameObjectsWithTag("Hamster"))
-        //{
-        //	HamsterController HMCon = HM.GetComponent<HamsterController>();
-        //
-        //	if((HM.transform.position - transform.position).magnitude > SonarDistance)
-        //	{
-        //		HMCon.Freeze();
-        //		HMCon.SetVisibility(true, SonarVisibilyDuration);
-        //	}
-        //	else
-        //		HMCon.SetVisibility(true, SonarVisibilyDuration);
-        //}
+
+		SonarCoolDown = SonarCoolDownLength;
     }
 
 	void Move(Vector3 Direction, float force)
