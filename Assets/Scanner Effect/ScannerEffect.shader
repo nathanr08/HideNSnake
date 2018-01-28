@@ -13,6 +13,12 @@ Shader "Hidden/ScannerEffect"
 		_MidColor("Mid Color", Color) = (1, 1, 1, 0)
 		_TrailColor("Trail Color", Color) = (1, 1, 1, 0)
 		_HBarColor("Horizontal Bar Color", Color) = (0.5, 0.5, 0.5, 0)
+
+		_CloseFarBlendDistance("Close/Far Blend distance", float) = 5
+		_CloseScanDistance("Close Scan Distance", float) = 0
+		_CloseMidColor("Close Mid Color", Color) = (1, 1, 1, 0)
+		_CloseTrailColor("Close Trail Color", Color) = (1, 1, 1, 0)
+		_CloseHBarColor("Close Horizontal Bar Color", Color) = (0.5, 0.5, 0.5, 0)
 	}
 	SubShader
 	{
@@ -74,6 +80,13 @@ Shader "Hidden/ScannerEffect"
 			float4 _TrailColor;
 			float4 _HBarColor;
 
+
+			float _CloseFarBlendDistance;
+			float _CloseScanDistance;
+			float4 _CloseMidColor;
+			float4 _CloseTrailColor;
+			float4 _CloseHBarColor;
+
 			float4 horizBars(float2 p)
 			{
 				return 1 - saturate(round(abs(frac(p.y * 100) * 2)));
@@ -93,15 +106,37 @@ Shader "Hidden/ScannerEffect"
 				float4 wsDir = linearDepth * i.interpolatedRay;
 				float3 wsPos = _WorldSpaceCameraPos + wsDir;
 				half4 scannerCol = half4(0, 0, 0, 0);
+				half4 closeScannerCol = half4(0, 0, 0, 0);
 
 				float dist = distance(wsPos, _WorldSpaceScannerPos);
 
-				if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && linearDepth < 1)
+				if (dist < _CloseScanDistance && dist > _CloseScanDistance - _ScanWidth && linearDepth < 1)
 				{
+					float closeDiff = 1 - (_ScanDistance - dist) / (_ScanWidth);
+					half4 closeEdge = lerp(_CloseMidColor, _LeadColor, pow(closeDiff, _LeadSharp));
+					closeScannerCol = lerp(_CloseTrailColor, closeEdge, closeDiff) + horizBars(i.uv) * _HBarColor;
+					closeScannerCol *= closeDiff;
+					//
+					//float diff = 1 - (_ScanDistance - dist) / (_ScanWidth);
+					//half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
+					//scannerCol = lerp(_TrailColor, edge, diff) + horizBars(i.uv) * _HBarColor;
+					//scannerCol *= diff;
+					//scannerCol *= clamp((_ScanDistance - _CloseScanDistance),0,_CloseFarBlendDistance) / _CloseFarBlendDistance;
+				}
+				else if (dist < _ScanDistance && dist > _ScanDistance - _ScanWidth && linearDepth < 1)
+				{
+					//float closeDiff = 1 - (_ScanDistance - dist) / (_ScanWidth);
+					//half4 closeEdge = lerp(_CloseMidColor, _LeadColor, pow(closeDiff, _LeadSharp));
+					//closeScannerCol = lerp(_CloseTrailColor, closeEdge, closeDiff) + horizBars(i.uv) * _HBarColor;
+					//closeScannerCol *= closeDiff;
+					//closeScannerCol *= ((clamp( ( (_CloseScanDistance+_CloseFarBlendDistance) -_ScanDistance ) ,0,_CloseFarBlendDistance) / _CloseFarBlendDistance) -1) * -1;
+
 					float diff = 1 - (_ScanDistance - dist) / (_ScanWidth);
 					half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
 					scannerCol = lerp(_TrailColor, edge, diff) + horizBars(i.uv) * _HBarColor;
 					scannerCol *= diff;
+					//scannerCol *= clamp((_ScanDistance - _CloseScanDistance),0,_CloseFarBlendDistance) / _CloseFarBlendDistance;
+
 				}
 
 				return col + scannerCol;

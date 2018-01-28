@@ -9,6 +9,8 @@ public class SnakeGuy : MonoBehaviour {
 
 	Camera MainCamera;
 
+	ScannerEffectDemo ScannerEffect;
+
    [SerializeField]
 	float SpeedMultiplier = 100000.0f;
 
@@ -26,6 +28,8 @@ public class SnakeGuy : MonoBehaviour {
 		AnimationController = GetComponent<Animator>();
 
 		MainCamera = GameObject.FindObjectOfType<Camera>();
+
+		ScannerEffect = MainCamera.GetComponent<ScannerEffectDemo>();
 
       baseControllable = GetComponent<BaseControllable>();
 	}
@@ -57,10 +61,10 @@ public class SnakeGuy : MonoBehaviour {
 		}
 
 
-		//if(Input.GetButtonDown(baseControllable.InputHandles.Action))
-		//{
-        // Sonar();
-		//}
+		if(Input.GetButtonDown(baseControllable.InputHandles.Action))
+		{
+         Sonar();
+		}
 
 		if(MyRigidBody.velocity.magnitude > 1.0f)
 		transform.forward = MyRigidBody.velocity.normalized;
@@ -69,18 +73,21 @@ public class SnakeGuy : MonoBehaviour {
 
    void Sonar( )
    {
-		foreach(GameObject HM in GameObject.FindGameObjectsWithTag("Hamster"))
-		{
-			HamsterController HMCon = HM.GetComponent<HamsterController>();
 
-			if((HM.transform.position - transform.position).magnitude > SonarDistance)
-			{
-				HMCon.Freeze();
-				HMCon.SetVisibility(true, SonarVisibilyDuration);
-			}
-			else
-				HMCon.SetVisibility(true, SonarVisibilyDuration);
-		}
+		ScannerEffect.ScanAtPosition(transform.position);
+
+		//foreach(GameObject HM in GameObject.FindGameObjectsWithTag("Hamster"))
+		//{
+		//	HamsterController HMCon = HM.GetComponent<HamsterController>();
+		//
+		//	if((HM.transform.position - transform.position).magnitude > SonarDistance)
+		//	{
+		//		HMCon.Freeze();
+		//		HMCon.SetVisibility(true, SonarVisibilyDuration);
+		//	}
+		//	else
+		//		HMCon.SetVisibility(true, SonarVisibilyDuration);
+		//}
    }
 
 	void Move(Vector3 Direction, float force)

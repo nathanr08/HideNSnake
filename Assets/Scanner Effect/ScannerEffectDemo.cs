@@ -6,8 +6,9 @@ public class ScannerEffectDemo : MonoBehaviour
 {
 	public Transform ScannerOrigin;
 	public Material EffectMaterial;
-	public float ScanDistance;
-
+	public float ScanDistance = 0;
+	public float CloseDistance = 30;
+	public float ScanHalfWayDistance = 0;
 	private Camera _camera;
 
 	// Demo Code
@@ -26,11 +27,16 @@ public class ScannerEffectDemo : MonoBehaviour
 			ScanDistance += Time.deltaTime * 50;
 			foreach (HamsterController s in _scannables)
 			{
-				if (Vector3.Distance(ScannerOrigin.position, s.transform.position) <= ScanDistance)
+				if(Vector3.Distance(ScannerOrigin.position, s.transform.position) < ScanDistance && CloseDistance > ScanDistance )
 				{
 					s.Freeze();
 					s.SetVisibility(true, 4.0f);
 				}
+				else if (Vector3.Distance(ScannerOrigin.position, s.transform.position) < ScanDistance && Vector3.Distance(ScannerOrigin.position, s.transform.position) > ScanDistance)
+				{
+					s.SetVisibility(true, 4.0f);
+				}
+				 
 			}
 		}
 
@@ -55,6 +61,13 @@ public class ScannerEffectDemo : MonoBehaviour
 	}
 	// End Demo Code
 
+
+	public void ScanAtPosition(Vector3 ScanPos)
+	{
+		_scanning = true;
+		ScanDistance = 0;
+		ScannerOrigin.position = ScanPos;
+	}
 	void OnEnable()
 	{
 		_camera = GetComponent<Camera>();
