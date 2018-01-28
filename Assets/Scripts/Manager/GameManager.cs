@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : StateController {
 
     public static GameManager Instance;
 
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour {
     public GameObject snakeSpawn;
     public GameObject[] hamsterSpawns;
 
+    public Text startCountdownText;
+    public Text matchTimerText;
+
     public GameObject snakePrefab;
     public GameObject hamsterPrefab;
 
@@ -20,6 +24,8 @@ public class GameManager : MonoBehaviour {
 
     private float gameTimeRemaining { get; set; }
     private float gameStartCountdown { get; set; }
+
+    private bool gameStarted;
 
     // Use this for initialization
     void Start () {
@@ -38,20 +44,27 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        gameStartCountdown -= Time.deltaTime;
-		if(gameStartCountdown <= 0.0f)
+        if (gameStarted)
         {
-            // game has started
-            gameTimeRemaining -= Time.deltaTime;
-            if (gameTimeRemaining <= 0.0f)
+            gameStartCountdown -= Time.deltaTime;
+            startCountdownText.text = ((int)gameStartCountdown).ToString();
+            if (gameStartCountdown <= 0.0f)
             {
-                EndGame();
+                // game has started
+                startCountdownText.gameObject.SetActive(false);
+                gameTimeRemaining -= Time.deltaTime;
+                matchTimerText.text = ((int)gameTimeRemaining).ToString();
+                if (gameTimeRemaining <= 0.0f)
+                {
+                    EndGame();
+                }
             }
         }
 	}
 
     public void InitGame(InitGameEvent.InitGameEventArgs e)
     {
+        gameStarted = true;
         // spawn characters
         int hamsterSpawnCount = 0;
         for (int i = 0; i < 4; ++i)
@@ -67,7 +80,7 @@ public class GameManager : MonoBehaviour {
                 else
                 {
                     player = Instantiate(hamsterPrefab);
-                    player.transform.position = hamsterSpawns[i].transform.position;
+                    player.transform.position = hamsterSpawns[hamsterSpawnCount].transform.position;
                     ++hamsterSpawnCount;
                 }
                 BaseControllable control = player.GetComponent<BaseControllable>();
@@ -78,10 +91,15 @@ public class GameManager : MonoBehaviour {
         // start timer
         gameTimeRemaining = gameLength;
         gameStartCountdown = gameStartCountdownLength;
+        startCountdownText.gameObject.SetActive(true);
+        startCountdownText.text = ((int)gameStartCountdown).ToString();
+        matchTimerText.text = ((int)gameTimeRemaining).ToString();
+        matchTimerText.gameObject.SetActive(true);
     }
 
     public void EndGame()
     {
+        gameStarted = false;
         // despawn
         GameObject[] hamsters = GameObject.FindGameObjectsWithTag("hamster");
         foreach(GameObject hamster in hamsters)
