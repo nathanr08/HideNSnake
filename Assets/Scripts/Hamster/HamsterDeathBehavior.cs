@@ -14,6 +14,9 @@ public class HamsterDeathBehavior : State {
             UISoundManager.GetInstance().HamsterDeath.Play();
         }
 
+        int playerNumber = hamsterController.GetComponent<BaseControllable>().InputHandles.PlayerNumber;
+        GameManager.Instance.playerIcons[playerNumber - 1].SetDead(true);
+
         hamsterController.SetVisibility(true);
     }
 
