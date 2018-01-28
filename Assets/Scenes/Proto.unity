@@ -910,7 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 292504494}
   currState: {fileID: 0}
-  gameLength: 120
+  gameLength: 45
   gameStartCountdownLength: 5
   snakeSpawn: {fileID: 817868006}
   hamsterSpawns:
@@ -953,7 +953,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4029219307514258, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -4.1
       objectReference: {fileID: 0}
     - target: {fileID: 4029219307514258, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -961,27 +961,41 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4029219307514258, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 21.9
       objectReference: {fileID: 0}
     - target: {fileID: 4029219307514258, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4029219307514258, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.8498563
       objectReference: {fileID: 0}
     - target: {fileID: 4029219307514258, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4029219307514258, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.52701443
       objectReference: {fileID: 0}
     - target: {fileID: 4029219307514258, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029219307514258, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -116.392006
+      objectReference: {fileID: 0}
+    - target: {fileID: 136292694288671412, guid: c1ecb4b32a69247458e9e038fc4f795f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54448209577018828, guid: c1ecb4b32a69247458e9e038fc4f795f,
+        type: 2}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
