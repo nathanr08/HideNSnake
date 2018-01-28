@@ -21,14 +21,16 @@ public class GameManager : StateController {
 
     public static string snakePlayer = "Snake";
     public static string hamsterPlayer = "Hamster";
+    public static string animStartCountdownTrigger = "StartCountdown";
+    public static string animStartMatchTrigger = "StartMatch";
+    public static string animEndMatchTrigger = "EndMatch";
 
-    private float gameTimeRemaining { get; set; }
-    private float gameStartCountdown { get; set; }
-
-    private bool gameStarted;
+    public float gameTimeRemaining;
+    public float gameStartCountdown;
 
     // Use this for initialization
-    void Start () {
+    public override void Start () {
+        base.Start();
         if (Instance == null)
         {
             Instance = this;
@@ -37,34 +39,10 @@ public class GameManager : StateController {
         {
             Destroy(this);
         }
-
-        gameTimeRemaining = gameLength;
-        gameStartCountdown = gameStartCountdownLength;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (gameStarted)
-        {
-            gameStartCountdown -= Time.deltaTime;
-            startCountdownText.text = ((int)gameStartCountdown).ToString();
-            if (gameStartCountdown <= 0.0f)
-            {
-                // game has started
-                startCountdownText.gameObject.SetActive(false);
-                gameTimeRemaining -= Time.deltaTime;
-                matchTimerText.text = ((int)gameTimeRemaining).ToString();
-                if (gameTimeRemaining <= 0.0f)
-                {
-                    EndGame();
-                }
-            }
-        }
 	}
 
     public void InitGame(InitGameEvent.InitGameEventArgs e)
     {
-        gameStarted = true;
         // spawn characters
         int hamsterSpawnCount = 0;
         for (int i = 0; i < 4; ++i)
@@ -88,29 +66,42 @@ public class GameManager : StateController {
             }
             
         }
-        // start timer
-        gameTimeRemaining = gameLength;
-        gameStartCountdown = gameStartCountdownLength;
-        startCountdownText.gameObject.SetActive(true);
-        startCountdownText.text = ((int)gameStartCountdown).ToString();
-        matchTimerText.text = ((int)gameTimeRemaining).ToString();
-        matchTimerText.gameObject.SetActive(true);
+        animator.SetTrigger(animStartCountdownTrigger);
     }
 
-    public void EndGame()
+    public void DespawnAll()
     {
-        gameStarted = false;
         // despawn
-        GameObject[] hamsters = GameObject.FindGameObjectsWithTag("hamster");
+        GameObject[] hamsters = GameObject.FindGameObjectsWithTag(hamsterPlayer);
         foreach(GameObject hamster in hamsters)
         {
             Destroy(hamster);
         }
-        GameObject[] snakes = GameObject.FindGameObjectsWithTag("snake");
+        GameObject[] snakes = GameObject.FindGameObjectsWithTag(snakePlayer);
         foreach(GameObject snake in snakes)
         {
             Destroy(snake);
         }
-        // show win screen
+    }
+
+    public void SetSnakePlayerInput(bool enabled)
+    {
+        GameObject[] snakes = GameObject.FindGameObjectsWithTag(snakePlayer);
+        foreach (GameObject snake in snakes)
+        {
+            snake.GetComponent<SnakeGuy>().enabled = enabled;
+            snake.GetComponent<Animator>().enabled = enabled;
+        }
+    }
+
+    public bool DidSnakeWin()
+    {
+        bool snakeWon = false;
+        GameObject[] hamsters = GameObject.FindGameObjectsWithTag(hamsterPlayer);
+        if(hamsters.Length == 0)
+        {
+            snakeWon = true;
+        }
+        return snakeWon;
     }
 }

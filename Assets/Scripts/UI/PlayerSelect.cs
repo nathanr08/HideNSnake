@@ -164,10 +164,13 @@ public class PlayerSelect : MonoBehaviour {
         string role = "";
         if(IsReadyToStart())
         {
-            if (isSnake)
-                role = GameManager.snakePlayer;
-            else
-                role = GameManager.hamsterPlayer;
+            if(joinedGame == true)
+            {
+                if (isSnake)
+                    role = GameManager.snakePlayer;
+                else
+                    role = GameManager.hamsterPlayer;
+            }
         }
         
         return role;

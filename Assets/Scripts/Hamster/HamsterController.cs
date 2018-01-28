@@ -17,12 +17,13 @@ public class HamsterController : StateController
     public float appearDurration = 0.2f;
     public float disappearDurration = 1.0f;
     [SerializeField]
-    private float fadeTimer = 0.0f;
+    private float fadeTimer = -1.0f;
     private List<Material> startColors = new List<Material>();
 
 
     private int health = 1;
     private float runCooldownTimer = 0.0f;
+    [SerializeField]
     private float visibilityTimer = 0.0f;
 
     private Rigidbody rBody;
@@ -51,11 +52,12 @@ public class HamsterController : StateController
         meshRenderer = GetComponent<MeshRenderer>();
         baseControllable = GetComponent<BaseControllable>();
         MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
-        foreach (MeshRenderer renderer in renderers)
+        //foreach (MeshRenderer renderer in renderers)
+        foreach( Renderer renderer in GetComponentsInChildren<Renderer>() )
         {
-            renderer.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            renderer.material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            renderer.material.renderQueue = 3000;
+            //renderer.material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            //renderer.material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            //renderer.material.renderQueue = 3000;
             startColors.Add( renderer.material );
         }
         print( startColors.Count );
@@ -83,21 +85,32 @@ public class HamsterController : StateController
 
         if (0.0f < fadeTimer)
         {
+            //print( "Fade Timer: " + fadeTimer );
             fadeTimer -= Time.deltaTime;
             float alpha = fadeTimer;
             if (isVisible)
             {
                 alpha /= appearDurration;
                 alpha = 1.0f - alpha;
+                print( "alpha: " + alpha + "fade: " + fadeTimer );
             }
             else
             {
                 alpha /= disappearDurration;
             }
+            alpha = Mathf.Max( 0.0f, alpha );
+            alpha = Mathf.Min( 1.0f, alpha );
             foreach (Material m in startColors)
             {
-                Color c = m.color;
-                m.color = new Color(c.r, c.g, c.b, alpha);
+                if (0.0f < alpha)
+                {
+                    Color c = m.color;
+                    m.color = new Color(c.r, c.g, c.b, alpha);
+                }
+                else
+                {
+                    GetComponent<Renderer>().enabled = false;
+                }
             }
         }
         ///////////////////////////////////////////////
@@ -122,7 +135,7 @@ public class HamsterController : StateController
             rBody.MoveRotation(Quaternion.LookRotation(lookDir));
     }
 
-    public void SetVisibility(bool visibility, float durration = 100.0f)
+    public void SetVisibility(bool visibility, float durration = 0.0f)
     {
         print( "set visability " + visibility );
         isVisible = visibility;
@@ -130,6 +143,7 @@ public class HamsterController : StateController
         {
             visibilityTimer = durration;
             fadeTimer = appearDurration;
+            GetComponent<Renderer>().enabled = true;
         }
         else
         {

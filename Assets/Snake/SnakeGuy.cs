@@ -12,6 +12,12 @@ public class SnakeGuy : MonoBehaviour {
    [SerializeField]
 	float SpeedMultiplier = 100000.0f;
 
+	[SerializeField]
+	float SonarDistance = 100000.0f;
+
+	[SerializeField]
+	float SonarVisibilyDuration = 4.0f;
+
    BaseControllable baseControllable;
 
 	// Use this for initialization
@@ -27,8 +33,8 @@ public class SnakeGuy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-     // Move(MainCamera.transform.up, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.VerticalAxis));
-     // Move(MainCamera.transform.right, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.HorizontalAxis));
+     	Move(MainCamera.transform.up, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.VerticalAxis));
+     	Move(MainCamera.transform.right, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.HorizontalAxis));
 
 
 		if(Input.GetKey(KeyCode.W))
@@ -63,7 +69,18 @@ public class SnakeGuy : MonoBehaviour {
 
    void Sonar( )
    {
+		foreach(GameObject HM in GameObject.FindGameObjectsWithTag("Hamster"))
+		{
+			HamsterController HMCon = HM.GetComponent<HamsterController>();
 
+			if((HM.transform.position - transform.position).magnitude > SonarDistance)
+			{
+				HMCon.Freeze();
+				HMCon.SetVisibility(true, SonarVisibilyDuration);
+			}
+			else
+				HMCon.SetVisibility(true, SonarVisibilyDuration);
+		}
    }
 
 	void Move(Vector3 Direction, float force)

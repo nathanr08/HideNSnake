@@ -1,0 +1,225 @@
+fileFormatVersion: 2
+guid: a6b41c174a36fd94380619670dd42bb8
+timeCreated: 1517121125
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Belly
+    100002: Body
+    100004: //RootNode
+    100006: Hamster
+    100008: Hamster_Bod
+    100010: Hamster_BRowWhiskers
+    100012: Hamster_Head
+    100014: Hamster_LeftEar
+    100016: Hamster_LeftEye
+    100018: Hamster_LeftForeLeg
+    100020: Hamster_LeftHindleg
+    100022: Hamster_RightEar
+    100024: Hamster_RightEye
+    100026: Hamster_RightForeleg
+    100028: Hamster_RightHindleg
+    100030: Hamster_Tail
+    100032: Hamster_Whiskers
+    100034: Hamter_Toofs
+    100036: Head
+    100038: Hips
+    100040: LAnkle
+    100042: LEar1
+    100044: LEar2
+    100046: LElbow
+    100048: LEye
+    100050: LFingers
+    100052: LHip
+    100054: LKnee
+    100056: LShoulder
+    100058: LToes
+    100060: LWhisker1
+    100062: LWhisker2
+    100064: LWhisker3
+    100066: LWrist
+    100068: Neck
+    100070: Nose
+    100072: RAnkle
+    100074: REar1
+    100076: REar2
+    100078: RElbow
+    100080: REye
+    100082: RFingers
+    100084: RHip
+    100086: RKnee
+    100088: Root
+    100090: RShoulder
+    100092: RToes
+    100094: RWhisker1
+    100096: RWhisker2
+    100098: RWhisker3
+    100100: RWrist
+    100102: Shoulders
+    100104: Tail1
+    100106: Tail2
+    400000: Belly
+    400002: Body
+    400004: //RootNode
+    400006: Hamster
+    400008: Hamster_Bod
+    400010: Hamster_BRowWhiskers
+    400012: Hamster_Head
+    400014: Hamster_LeftEar
+    400016: Hamster_LeftEye
+    400018: Hamster_LeftForeLeg
+    400020: Hamster_LeftHindleg
+    400022: Hamster_RightEar
+    400024: Hamster_RightEye
+    400026: Hamster_RightForeleg
+    400028: Hamster_RightHindleg
+    400030: Hamster_Tail
+    400032: Hamster_Whiskers
+    400034: Hamter_Toofs
+    400036: Head
+    400038: Hips
+    400040: LAnkle
+    400042: LEar1
+    400044: LEar2
+    400046: LElbow
+    400048: LEye
+    400050: LFingers
+    400052: LHip
+    400054: LKnee
+    400056: LShoulder
+    400058: LToes
+    400060: LWhisker1
+    400062: LWhisker2
+    400064: LWhisker3
+    400066: LWrist
+    400068: Neck
+    400070: Nose
+    400072: RAnkle
+    400074: REar1
+    400076: REar2
+    400078: RElbow
+    400080: REye
+    400082: RFingers
+    400084: RHip
+    400086: RKnee
+    400088: Root
+    400090: RShoulder
+    400092: RToes
+    400094: RWhisker1
+    400096: RWhisker2
+    400098: RWhisker3
+    400100: RWrist
+    400102: Shoulders
+    400104: Tail1
+    400106: Tail2
+    2100000: lambert1
+    4300000: Hamster_Head
+    4300002: Hamter_Toofs
+    4300004: Hamster_Bod
+    4300006: Hamster_Tail
+    4300008: Hamster_LeftEar
+    4300010: Hamster_RightEar
+    4300012: Hamster_LeftEye
+    4300014: Hamster_RightEye
+    4300016: Hamster_LeftHindleg
+    4300018: Hamster_RightHindleg
+    4300020: Hamster_LeftForeLeg
+    4300022: Hamster_RightForeleg
+    4300024: Hamster_BRowWhiskers
+    4300026: Hamster_Whiskers
+    9500000: //RootNode
+    13700000: Hamster_Bod
+    13700002: Hamster_BRowWhiskers
+    13700004: Hamster_Head
+    13700006: Hamster_LeftEar
+    13700008: Hamster_LeftEye
+    13700010: Hamster_LeftForeLeg
+    13700012: Hamster_LeftHindleg
+    13700014: Hamster_RightEar
+    13700016: Hamster_RightEye
+    13700018: Hamster_RightForeleg
+    13700020: Hamster_RightHindleg
+    13700022: Hamster_Tail
+    13700024: Hamster_Whiskers
+    13700026: Hamter_Toofs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
