@@ -7,12 +7,17 @@ ModelImporter:
   fileIDToRecycleName:
     100000: polySurface58
     100002: //RootNode
+    100004: GreenRex
     400000: polySurface58
     400002: //RootNode
+    400004: GreenRex
     2100000: TheRoom_MAT
     2300000: polySurface58
+    2300002: GreenRex
     3300000: polySurface58
+    3300002: GreenRex
     4300000: polySurface58
+    4300002: GreenRex
     9500000: //RootNode
   externalObjects: {}
   materials:

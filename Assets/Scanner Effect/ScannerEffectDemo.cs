@@ -18,11 +18,12 @@ public class ScannerEffectDemo : MonoBehaviour
 
 	void Start()
 	{
-		_scannables = FindObjectsOfType<HamsterController>();
     }
 
 	void Update()
 	{
+		_scannables = FindObjectsOfType<HamsterController>();
+
 		if (_scanning)
 		{
 			ScanDistance += Time.deltaTime * 50;

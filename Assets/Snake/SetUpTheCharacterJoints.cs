@@ -19,12 +19,11 @@ public class SetUpTheCharacterJoints : MonoBehaviour {
 		SpCol = GetComponent<SphereCollider>();
 		ExampleCJoint = loopparent.GetComponent<HingeJoint>();
 
-
 		//int count = 0;
 		while(child != null)
 		{
 
-
+			loopparent.tag = "Snake";
 
 			//++count;
 			ParentRBody = loopparent.GetComponent<Rigidbody>();

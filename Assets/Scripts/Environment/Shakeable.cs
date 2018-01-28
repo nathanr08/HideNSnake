@@ -13,9 +13,12 @@ public class Shakeable : MonoBehaviour {
     private float jiggle_factor = 5.0f;
     private Vector3 start_scale;
 
+	private MeshRenderer MyMeshRend;
+
     public virtual void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+		MyMeshRend = GetComponent<MeshRenderer>();
+		audioSource = GetComponent<AudioSource>();
         start_scale = transform.localScale;
     }
 
