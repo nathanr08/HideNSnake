@@ -107,4 +107,12 @@ public class HamsterController : StateController {
         health -= damage;
         animator.SetInteger(animHealth, health);
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if( other.gameObject.layer == LayerMask.NameToLayer("SnakeHead") )
+        {
+            TakeDamage( 1 );
+        }
+    }
 }
