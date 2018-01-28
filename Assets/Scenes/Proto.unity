@@ -647,6 +647,8 @@ GameObject:
   - component: {fileID: 212661324}
   - component: {fileID: 212661326}
   - component: {fileID: 212661325}
+  - component: {fileID: 212661328}
+  - component: {fileID: 212661327}
   m_Layer: 5
   m_Name: EndMatchPanel
   m_TagString: Untagged
@@ -708,6 +710,30 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 212661323}
+--- !u!114 &212661327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 212661323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14360d259735e614b911453fd8c9162c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backToMenuButton: {fileID: 773648962}
+--- !u!114 &212661328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 212661323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9816a22fb7c1a4ab831bdc50bce0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerNumber: 1
 --- !u!1 &218324692
 GameObject:
   m_ObjectHideFlags: 0
