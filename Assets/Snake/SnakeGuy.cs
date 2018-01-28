@@ -69,7 +69,7 @@ public class SnakeGuy : MonoBehaviour {
 	void Move(Vector3 Direction, float force)
 	{
 		//MyRigidBody.AddRelativeTorque(new Vector3(0.0f,10.0f,0.0f));
-		MyRigidBody.AddForce(Direction * force);
+		MyRigidBody.AddForce(Direction * force * Time.deltaTime);
 
 	}
 }
