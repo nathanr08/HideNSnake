@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 82154312571634364}
   m_Layer: 10
   m_Name: Hamster
-  m_TagString: Untagged
+  m_TagString: Hamster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1957,6 +1957,7 @@ MonoBehaviour:
   appearDurration: 0.2
   disappearDurration: 1
   fadeTimer: 0
+  visibilityTimer: 0
   WalkAudio: {fileID: 82350452790902492}
   RunAudio: {fileID: 82870015601224620}
   WalkFastAudio: {fileID: 82154312571634364}
