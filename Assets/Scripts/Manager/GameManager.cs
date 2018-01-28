@@ -78,6 +78,24 @@ public class GameManager : StateController {
                 {
                     player = Instantiate(hamsterPrefab);
                     player.transform.position = hamsterSpawns[hamsterSpawnCount].transform.position;
+                    Color pColor = new Color(1,1,1);
+                    switch( i+1 )
+                    {
+                        case 1: // RED
+                            pColor = Color.red;
+                            break;
+                        case 2: // BLUE
+                            pColor = Color.blue;
+                            break;
+                        case 3: // GREEN
+                            pColor = Color.green;
+                            break;
+                        case 4: // YELLOW
+                            pColor = Color.yellow;
+                            break;
+                    }
+                    player.GetComponentInChildren<Text>().enabled = true;
+                    player.GetComponentInChildren<Text>().color = pColor;
                     ++hamsterSpawnCount;
                 }
                 BaseControllable control = player.GetComponent<BaseControllable>();
