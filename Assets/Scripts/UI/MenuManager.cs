@@ -12,6 +12,8 @@ public class MenuManager : MonoBehaviour
         PushMenuEvent  .Register(PushMenuEventHandler  );
         PopMenuEvent   .Register(PopMenuEventHandler   );
         ChangeMenuEvent.Register(ChangeMenuEventHandler);
+        InitGameEvent  .Register(InitGameEventHandler  );
+        new PushMenuEvent( "setup" );
     }
 
     public void PushMenuEventHandler(object sender, PushMenuEvent.PushMenuEventArgs e)
@@ -34,7 +36,14 @@ public class MenuManager : MonoBehaviour
             SceneManager.UnloadSceneAsync( menuStack.Pop() );
             menuStack.Clear();
         }
-        menuStack.Push( e.MenuName );
-        SceneManager.LoadSceneAsync( e.MenuName, LoadSceneMode.Additive );
+        if( "" == e.MenuName )
+        {
+            menuStack.Push( e.MenuName );
+            SceneManager.LoadSceneAsync( e.MenuName, LoadSceneMode.Additive );
+        }
+    }
+    public void InitGameEventHandler( object sender, InitGameEvent.InitGameEventArgs e )
+    {
+
     }
 }
