@@ -32,6 +32,8 @@ public class InGameState : State {
             else
                 gameManager.matchResults = GameManager.snakePlayer;
 
+            gameManager.gameInProgress = false;
+            MusicManager.GetInstance().GameMusic.Stop();
             animator.SetTrigger(GameManager.animEndMatchTrigger);
         }
     }
