@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4257320176496724}
   - component: {fileID: 33544531155485198}
   - component: {fileID: 23713468021677746}
+  - component: {fileID: 114626366135752774}
   m_Layer: 0
   m_Name: Teddy02
   m_TagString: Untagged
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1887215061953636}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0664, y: 0, z: 0.1086}
+  m_LocalPosition: {x: -0.0756, y: 0, z: 0.2866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4257320176496724}
@@ -85,7 +86,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1aa83c29c1421a54aa3aa929abc2f9ad, type: 3}
+  - {fileID: 2100000, guid: ec9d5a464df9c4044bcb007f5dd722b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,3 +130,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114626366135752774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1135482293207654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e468887bdbc61a041989742f5eae2c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggle_speed: 5
+  jiggle_factor: 5
+  AddTriggerMeshCollider: 0

@@ -89,7 +89,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a9b1ec5702191f34085184928b9bbf35, type: 3}
+  - {fileID: 2100000, guid: ec9d5a464df9c4044bcb007f5dd722b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -255,3 +255,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jiggle_speed: 5
   jiggle_factor: 5
+  AddTriggerMeshCollider: 0

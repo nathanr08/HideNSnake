@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4635341263268774}
   - component: {fileID: 95744180008261552}
+  - component: {fileID: 114773167315130772}
   m_Layer: 0
   m_Name: Prop_ShirtPile_SMesh
   m_TagString: Untagged
@@ -37,6 +38,7 @@ GameObject:
   - component: {fileID: 4229044022998844}
   - component: {fileID: 33921652285763348}
   - component: {fileID: 23920144091829910}
+  - component: {fileID: 114344751086151918}
   m_Layer: 0
   m_Name: ShirtPile
   m_TagString: Untagged
@@ -85,7 +87,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d39ef5cf54fe22644b895b1d4667ff10, type: 3}
+  - {fileID: 2100000, guid: ec9d5a464df9c4044bcb007f5dd722b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,3 +131,31 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114344751086151918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489069445518082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e468887bdbc61a041989742f5eae2c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggle_speed: 5
+  jiggle_factor: 5
+  AddTriggerMeshCollider: 0
+--- !u!114 &114773167315130772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253958626610682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e468887bdbc61a041989742f5eae2c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggle_speed: 5
+  jiggle_factor: 5
+  AddTriggerMeshCollider: 0

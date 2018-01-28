@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4829264079226502}
   - component: {fileID: 33691355595271410}
   - component: {fileID: 23691099196719902}
+  - component: {fileID: 114180939008293798}
   m_Layer: 0
   m_Name: Box_Upright
   m_TagString: Untagged
@@ -85,7 +86,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cadd68e012cd82d4a9bb5fbe2c919de5, type: 3}
+  - {fileID: 2100000, guid: ec9d5a464df9c4044bcb007f5dd722b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,3 +130,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114180939008293798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510908652233442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e468887bdbc61a041989742f5eae2c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggle_speed: 5
+  jiggle_factor: 5
+  AddTriggerMeshCollider: 1
