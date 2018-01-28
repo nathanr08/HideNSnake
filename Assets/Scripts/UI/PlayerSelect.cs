@@ -81,6 +81,7 @@ public class PlayerSelect : MonoBehaviour {
     /// </summary>
     public void JoinGame()
     {
+        UISoundManager.GetInstance().ConfirmSound.Play();
         joinedGame = true;
         joinGamePanel.SetActive(false);
         roleSelectPanel.SetActive(true);
@@ -103,7 +104,8 @@ public class PlayerSelect : MonoBehaviour {
     /// </summary>
     public void SwitchRole()
     {
-        if(isSnake)
+        UISoundManager.GetInstance().NavigateSound.Play();
+        if (isSnake)
         {
             snakeButton.gameObject.SetActive(false);
             hamsterButton.gameObject.SetActive(true);
@@ -120,13 +122,15 @@ public class PlayerSelect : MonoBehaviour {
     /// called when you confirm your role as hamster or snake
     /// </summary>
     public void ConfirmRole()
-    {
-        if(isSnake)
+    {     
+        if (isSnake)
         {
             confirmImage.sprite = snakeConfirm;
+            UISoundManager.GetInstance().ConfirmSound.Play();
         }
         else
         {
+            UISoundManager.GetInstance().CharSelectSound.Play();
             confirmImage.sprite = hamsterConfirm;
         }
         confirmImage.gameObject.SetActive(true);

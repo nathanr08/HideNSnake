@@ -76,6 +76,13 @@ public class HamsterController : StateController
         ///////////////////////////////////////////////
         // Visability                                //
         ///////////////////////////////////////////////
+
+        // Hack, if the game has not started, bail
+        if (GameManager.Instance == null || !GameManager.Instance.gameInProgress)
+        {
+            return;
+        }
+
         if (visibilityTimer < initialVisibilityTime)
         {
             visibilityTimer += Time.deltaTime;

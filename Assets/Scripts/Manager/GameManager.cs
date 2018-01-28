@@ -16,6 +16,7 @@ public class GameManager : StateController {
     public Text startCountdownText;
     public Text matchTimerText;
 
+    public bool gameInProgress = false;
     public string matchResults = "";
 
     public GameObject victoryPanel;
@@ -50,13 +51,16 @@ public class GameManager : StateController {
 	}
 
     public void InitGame(InitGameEvent.InitGameEventArgs e)
-    {
+    {        
         // Play music!
         if (MusicManager.GetInstance() != null && MusicManager.GetInstance() != null)
         {
             MusicManager.GetInstance().MenuMusic.Stop();
             MusicManager.GetInstance().GameMusic.Play();
         }
+
+        // Remove the stand in/title screen characters
+        DespawnAll();
 
         // spawn characters
         int hamsterSpawnCount = 0;

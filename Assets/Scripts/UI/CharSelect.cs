@@ -9,6 +9,10 @@ public class CharSelect : MonoBehaviour {
 
     private BaseControllable baseControllable;
 
+    [SerializeField]
+    public AudioSource ConfirmSound;
+    public AudioSource NavigateSound;
+
     private void Start()
     {
         baseControllable = GetComponent<BaseControllable>();

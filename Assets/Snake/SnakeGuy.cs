@@ -44,8 +44,13 @@ public class SnakeGuy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-     	Move(MainCamera.transform.up, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.VerticalAxis));
+
+        // Hack, if the game has not started, bail
+        if (GameManager.Instance == null || !GameManager.Instance.gameInProgress)
+        {
+            return;
+        }
+        Move(MainCamera.transform.up, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.VerticalAxis));
      	Move(MainCamera.transform.right, SpeedMultiplier * Input.GetAxis(baseControllable.InputHandles.HorizontalAxis));
 
 
