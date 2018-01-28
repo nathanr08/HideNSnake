@@ -10,8 +10,10 @@ public class SnakeGuy : MonoBehaviour {
 	Camera MainCamera;
 
 	ScannerEffectDemo ScannerEffect;
+    [SerializeField]
+    AudioSource UseFreezeAudio;
 
-   [SerializeField]
+    [SerializeField]
 	float SpeedMultiplier = 100000.0f;
 
 	[SerializeField]
@@ -76,19 +78,24 @@ public class SnakeGuy : MonoBehaviour {
 
 		ScannerEffect.ScanAtPosition(transform.position);
 
-		//foreach(GameObject HM in GameObject.FindGameObjectsWithTag("Hamster"))
-		//{
-		//	HamsterController HMCon = HM.GetComponent<HamsterController>();
-		//
-		//	if((HM.transform.position - transform.position).magnitude > SonarDistance)
-		//	{
-		//		HMCon.Freeze();
-		//		HMCon.SetVisibility(true, SonarVisibilyDuration);
-		//	}
-		//	else
-		//		HMCon.SetVisibility(true, SonarVisibilyDuration);
-		//}
-   }
+        if (UseFreezeAudio != null && !UseFreezeAudio.isPlaying)
+        {
+            UseFreezeAudio.Play();
+        }
+
+        //foreach(GameObject HM in GameObject.FindGameObjectsWithTag("Hamster"))
+        //{
+        //	HamsterController HMCon = HM.GetComponent<HamsterController>();
+        //
+        //	if((HM.transform.position - transform.position).magnitude > SonarDistance)
+        //	{
+        //		HMCon.Freeze();
+        //		HMCon.SetVisibility(true, SonarVisibilyDuration);
+        //	}
+        //	else
+        //		HMCon.SetVisibility(true, SonarVisibilyDuration);
+        //}
+    }
 
 	void Move(Vector3 Direction, float force)
 	{
