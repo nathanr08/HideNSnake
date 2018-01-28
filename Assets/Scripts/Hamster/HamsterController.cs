@@ -155,22 +155,22 @@ public class HamsterController : StateController
     {
         print( "set visability " + visibility + " duration " + durration );
         isVisible = visibility;
-        //if( isVisible )
-        //{
-        //    visibilityTimer = 0.0f;
-        //    currVisibilityTime = durration;
-        //    fadeTimer = appearDurration;
-        //    GetComponent<Renderer>().enabled = true;
-        //}
-        //else
-        //{
-        //    fadeTimer = disappearDurration;
-        //}
-        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
-        foreach (MeshRenderer renderer in renderers)
+        if( isVisible )
         {
-            renderer.enabled = visibility;
+            visibilityTimer = 0.0f;
+            currVisibilityTime = durration;
+            fadeTimer = appearDurration;
+            GetComponent<Renderer>().enabled = true;
         }
+        else
+        {
+            fadeTimer = disappearDurration;
+        }
+        //MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>();
+        //foreach (MeshRenderer renderer in renderers)
+        //{
+        //    renderer.enabled = visibility;
+        //}
         GetComponentInChildren<Text>().enabled = visibility;
     }
 
