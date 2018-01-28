@@ -69,16 +69,17 @@ public class SnakeGuy : MonoBehaviour {
 
    void Sonar( )
    {
-		foreach(HamsterController HM in (HamsterController)GameObject.FindGameObjectsWithTag("Hamster"))
+		foreach(GameObject HM in GameObject.FindGameObjectsWithTag("Hamster"))
 		{
+			HamsterController HMCon = HM.GetComponent<HamsterController>();
 
-			if((HM.transform.position - transform.position).magnitude )
+			if((HM.transform.position - transform.position).magnitude > SonarDistance)
 			{
-				HM.Freeze();
-				HM.SetVisibility(true, SonarVisibilyDuration);
+				HMCon.Freeze();
+				HMCon.SetVisibility(true, SonarVisibilyDuration);
 			}
 			else
-				HM.SetVisibility(true, SonarVisibilyDuration);
+				HMCon.SetVisibility(true, SonarVisibilyDuration);
 		}
    }
 
