@@ -65,6 +65,10 @@ public class HamsterController : StateController {
         rBody.MovePosition(transform.position + movementPerSecond * Time.deltaTime);
 
         this.animator.SetFloat(animMoveSpeed, movementPerSecond.magnitude);
+
+        Vector3 lookDir = movementPerSecond.normalized;
+        if (lookDir.magnitude != 0.0f)
+            rBody.MoveRotation(Quaternion.LookRotation(lookDir));
     }
 
     public void SetVisibility(bool visibility)
