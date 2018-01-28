@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4566575032867344}
   - component: {fileID: 95959097917325530}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_Gastonia_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4878255437296258}
   - component: {fileID: 33701352251092346}
   - component: {fileID: 23223253090135000}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Anky_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

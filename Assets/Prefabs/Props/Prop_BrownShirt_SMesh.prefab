@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4266098255049056}
   - component: {fileID: 95035127022435676}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_BrownShirt_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4182939993625654}
   - component: {fileID: 33376720284721258}
   - component: {fileID: 23906476967182448}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shirt01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

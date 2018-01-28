@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4726472114142722}
   - component: {fileID: 95116529884994520}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_GoatSkull_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4039885097818808}
   - component: {fileID: 33552753930728910}
   - component: {fileID: 23928551248833954}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GoatSkull
   m_TagString: Untagged
   m_Icon: {fileID: 0}

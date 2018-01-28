@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4369465905421126}
   - component: {fileID: 95486025924548592}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_FullBox_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 33691355595271410}
   - component: {fileID: 23691099196719902}
   - component: {fileID: 114180939008293798}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Box_Upright
   m_TagString: Untagged
   m_Icon: {fileID: 0}

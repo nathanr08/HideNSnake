@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 33575807499789494}
   - component: {fileID: 23565885135696938}
   - component: {fileID: 114404056950704278}
-  m_Layer: 0
+  - component: {fileID: 114258855979421718}
+  m_Layer: 12
   m_Name: Backpack5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4446654061991496}
   - component: {fileID: 95424018582682044}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_Backpack_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,6 +131,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114258855979421718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282635703721616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e468887bdbc61a041989742f5eae2c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jiggle_speed: 5
+  jiggle_factor: 5
+  AddTriggerMeshCollider: 1
 --- !u!114 &114404056950704278
 MonoBehaviour:
   m_ObjectHideFlags: 1

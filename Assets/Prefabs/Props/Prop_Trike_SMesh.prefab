@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4486145269884004}
   - component: {fileID: 95931107345758450}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_Trike_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4329892450012334}
   - component: {fileID: 33686927560345490}
   - component: {fileID: 23541630096697976}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Trike_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

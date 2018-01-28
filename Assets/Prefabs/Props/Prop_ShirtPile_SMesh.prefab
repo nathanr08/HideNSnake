@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4635341263268774}
   - component: {fileID: 95744180008261552}
   - component: {fileID: 114773167315130772}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_ShirtPile_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33921652285763348}
   - component: {fileID: 23920144091829910}
   - component: {fileID: 114344751086151918}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShirtPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

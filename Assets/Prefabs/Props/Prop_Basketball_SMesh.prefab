@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4909795654850874}
   - component: {fileID: 95601757091568296}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_Basketball_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 23184048208623060}
   - component: {fileID: 135857032201272398}
   - component: {fileID: 54791207066104006}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Basketball1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

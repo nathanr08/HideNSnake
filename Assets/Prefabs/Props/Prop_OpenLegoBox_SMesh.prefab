@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33497066993956350}
   - component: {fileID: 23225214945788522}
   - component: {fileID: 114658467642633388}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: OPenBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4452021636656682}
   - component: {fileID: 95175356224010986}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_OpenLegoBox_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

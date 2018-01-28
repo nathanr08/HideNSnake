@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33868416637065658}
   - component: {fileID: 23900899960592956}
   - component: {fileID: 114140960364617634}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shirt02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4784655939977450}
   - component: {fileID: 95965454734388870}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_WhiteShirt_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

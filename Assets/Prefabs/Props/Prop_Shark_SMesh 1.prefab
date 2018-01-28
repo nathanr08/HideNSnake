@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4440674561924950}
   - component: {fileID: 95885559971950480}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_Shark_SMesh 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4609721068057678}
   - component: {fileID: 33343397702871338}
   - component: {fileID: 23019273549740692}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SharkPlush
   m_TagString: Untagged
   m_Icon: {fileID: 0}

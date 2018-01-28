@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4009604118038606}
   - component: {fileID: 33091723277197778}
   - component: {fileID: 23206000057586652}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GreenRex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4475473882186404}
   - component: {fileID: 95266556756250594}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_RexGreen_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33975462545516816}
   - component: {fileID: 23203226159677074}
   - component: {fileID: 114558223020110886}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DrawingPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4468735815262518}
   - component: {fileID: 95096085989986270}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_DrawingPad_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

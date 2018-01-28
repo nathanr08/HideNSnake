@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4645358329806638}
   - component: {fileID: 95656590217914730}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_LegoBox_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 33347392156000998}
   - component: {fileID: 23015790717354200}
   - component: {fileID: 114027173787909452}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: LegoBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

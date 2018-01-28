@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4231050720346396}
   - component: {fileID: 95899878864047548}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_Pachy_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4232674415082412}
   - component: {fileID: 33052493822772696}
   - component: {fileID: 23318604529844466}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pachy_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

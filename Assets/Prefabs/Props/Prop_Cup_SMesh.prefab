@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4505152774583330}
   - component: {fileID: 95526121557253856}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_Cup_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4461959128890390}
   - component: {fileID: 33402374190352184}
   - component: {fileID: 23733676757525076}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}

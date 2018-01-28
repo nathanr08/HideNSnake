@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4728340649419770}
   - component: {fileID: 33594952824500814}
   - component: {fileID: 23508745245580642}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stego_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4072218174872464}
   - component: {fileID: 95669717333906032}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_Stego_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

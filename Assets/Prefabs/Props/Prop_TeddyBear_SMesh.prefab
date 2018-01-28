@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23482773045458918}
   - component: {fileID: 95506605329919722}
   - component: {fileID: 114769316204477908}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_TeddyBear_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4368522512704356}
   - component: {fileID: 95320830276448050}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_BighornSheep_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4464992171380182}
   - component: {fileID: 33209974501526620}
   - component: {fileID: 23230327031513664}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Sheep01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33480221629691264}
   - component: {fileID: 23575179265075168}
   - component: {fileID: 114309418217650554}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shoes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4892276218414544}
   - component: {fileID: 95836349405970676}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Prop_Shoes_SMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
