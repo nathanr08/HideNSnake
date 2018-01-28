@@ -123,6 +123,7 @@ public class HamsterController : StateController
         isVisible = visibility;
         if( isVisible )
         {
+            visibilityTimer = durration;
             fadeTimer = appearDurration;
         }
         else
