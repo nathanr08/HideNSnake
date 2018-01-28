@@ -5,12 +5,19 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     Stack<string> menuStack;
+    MusicManager musicManager;
+
 
     // Use this for initialization
     void Start()
     {
         menuStack = new Stack<string>();
+        musicManager = MusicManager.GetInstance();
 
+        if (musicManager != null && musicManager.MenuMusic != null)
+        {
+            musicManager.MenuMusic.Play();
+        }
         PushMenuEvent  .Register(PushMenuEventHandler  );
         PopMenuEvent   .Register(PopMenuEventHandler   );
         ChangeMenuEvent.Register(ChangeMenuEventHandler);
@@ -46,6 +53,15 @@ public class MenuManager : MonoBehaviour
     }
     public void InitGameEventHandler( object sender, InitGameEvent.InitGameEventArgs e )
     {
-        GameManager.Instance.InitGame(e);
+        if (musicManager != null && musicManager.MenuMusic != null)
+        {
+            musicManager.MenuMusic.Stop();
+        }
+
+        if (musicManager != null && musicManager.GameMusic != null)
+        {
+            musicManager.GameMusic.PlayDelayed(1f);
+        }
+        GameManager.Instance.InitGame(e);     
     }
 }
