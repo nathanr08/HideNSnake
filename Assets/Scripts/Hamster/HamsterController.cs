@@ -33,7 +33,8 @@ public class HamsterController : StateController
     [SerializeField]
     public AudioSource WalkAudio;
     public AudioSource RunAudio;
-    public AudioSource WalkFastAudio;
+    public AudioSource RunAudioEnd;
+    public AudioSource WalkFastAudio;    
 
     #region animVars
     public static string animHealth = "playerHealth";

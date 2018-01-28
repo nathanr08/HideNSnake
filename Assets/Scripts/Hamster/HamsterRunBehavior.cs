@@ -26,7 +26,7 @@ public class HamsterRunBehavior : State {
             {
                 hamsterController.WalkAudio.Play();
             }
-
+            
             hamsterController.WalkFastAudio.PlayDelayed(0.4f);
         }
     }
@@ -35,9 +35,28 @@ public class HamsterRunBehavior : State {
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         HamsterController hamsterController = ((HamsterController)controller);
         runTimer += Time.deltaTime;
+        Debug.Log("@@@@@@@@@@@@@@@" + runTimer);
+        if (runTimer <= 1.5)
+        {
+            float MoveSpeed = Mathf.Lerp(hamsterController.walkSpeed, hamsterController.runSpeed, runTimer / 1.5f);
+            hamsterController.DoMovement(MoveSpeed);
+            Debug.Log("@@@@@@@@@@@@@@@" + MoveSpeed);
+        }
+       
         if (runTimer < hamsterController.runTime)
         {
-            hamsterController.DoMovement(hamsterController.runSpeed);            
+            hamsterController.DoMovement(hamsterController.runSpeed);
+
+            // Play the wind down sound
+            if (hamsterController.runTime - runTimer <= 1)
+            {
+                hamsterController.DoMovement(Mathf.Lerp(hamsterController.runSpeed, hamsterController.walkSpeed, runTimer / hamsterController.runTime));
+                if (hamsterController.RunAudioEnd != null && !hamsterController.RunAudioEnd.isPlaying)
+                {
+                    hamsterController.RunAudioEnd.PlayDelayed(0.3f);
+                }
+            }            
+            
         }
         else
         {
@@ -54,7 +73,7 @@ public class HamsterRunBehavior : State {
         if (hamsterController.WalkFastAudio != null && hamsterController.WalkFastAudio.isPlaying)
         {         
             hamsterController.WalkFastAudio.Stop();
-        }
+        }        
     }
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
