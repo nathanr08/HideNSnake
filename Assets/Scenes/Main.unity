@@ -1262,6 +1262,11 @@ Prefab:
       propertyPath: SpeedMultiplier
       value: 500000
       objectReference: {fileID: 0}
+    - target: {fileID: 82181899317654508, guid: c1ecb4b32a69247458e9e038fc4f795f,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b4b706b599726e246b1aab24283f173d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1ecb4b32a69247458e9e038fc4f795f, type: 2}
   m_IsPrefabParent: 0
@@ -2432,7 +2437,6 @@ GameObject:
   - component: {fileID: 1716762162}
   - component: {fileID: 1716762161}
   - component: {fileID: 1716762160}
-  - component: {fileID: 1716762159}
   m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
@@ -2440,18 +2444,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1716762159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1716762158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f679e8ed3c108a4aaf510ee77158899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpeedMultiplier: 100000
 --- !u!23 &1716762160
 MeshRenderer:
   m_ObjectHideFlags: 0
