@@ -18,7 +18,7 @@ public class HamsterWalkBehavior : State {
         // Play the walk sound
         if (hamsterController.WalkAudio != null && !hamsterController.WalkAudio.isPlaying)
         {
-            hamsterController.GetComponent<AudioSource>().Play();
+            hamsterController.WalkAudio.Play();
         }
     }
 
