@@ -9,7 +9,7 @@ public class SnakeGuy : MonoBehaviour {
 
 	Camera MainCamera;
 
-	float SpeedMultiplier = 1000.0f;
+	float SpeedMultiplier = 100000.0f;
 
 	// Use this for initialization
 	void Start () {
