@@ -22,8 +22,11 @@ public class SnakeGuy : MonoBehaviour {
 
    BaseControllable baseControllable;
 
-	// Use this for initialization
-	void Start () {
+   [SerializeField]
+   public AudioSource UseFreezeAudio; 
+
+    // Use this for initialization
+    void Start () {
 		MyRigidBody = GetComponent<Rigidbody>();
 		AnimationController = GetComponent<Animator>();
 
@@ -76,19 +79,23 @@ public class SnakeGuy : MonoBehaviour {
 
 		ScannerEffect.ScanAtPosition(transform.position);
 
-		//foreach(GameObject HM in GameObject.FindGameObjectsWithTag("Hamster"))
-		//{
-		//	HamsterController HMCon = HM.GetComponent<HamsterController>();
-		//
-		//	if((HM.transform.position - transform.position).magnitude > SonarDistance)
-		//	{
-		//		HMCon.Freeze();
-		//		HMCon.SetVisibility(true, SonarVisibilyDuration);
-		//	}
-		//	else
-		//		HMCon.SetVisibility(true, SonarVisibilyDuration);
-		//}
-   }
+        if (UseFreezeAudio != null && !UseFreezeAudio.isPlaying)
+        {
+            UseFreezeAudio.Play();
+        }
+        //foreach(GameObject HM in GameObject.FindGameObjectsWithTag("Hamster"))
+        //{
+        //	HamsterController HMCon = HM.GetComponent<HamsterController>();
+        //
+        //	if((HM.transform.position - transform.position).magnitude > SonarDistance)
+        //	{
+        //		HMCon.Freeze();
+        //		HMCon.SetVisibility(true, SonarVisibilyDuration);
+        //	}
+        //	else
+        //		HMCon.SetVisibility(true, SonarVisibilyDuration);
+        //}
+    }
 
 	void Move(Vector3 Direction, float force)
 	{

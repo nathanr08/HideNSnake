@@ -2698,10 +2698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f679e8ed3c108a4aaf510ee77158899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseFreezeAudio: {fileID: 82692889744840546}
   SpeedMultiplier: 3000000
   SonarDistance: 100000
   SonarVisibilyDuration: 4
+  UseFreezeAudio: {fileID: 82692889744840546}
 --- !u!114 &114958011900758288
 MonoBehaviour:
   m_ObjectHideFlags: 1
