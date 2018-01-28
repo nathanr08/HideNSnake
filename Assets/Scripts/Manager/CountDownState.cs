@@ -15,7 +15,7 @@ public class CountDownState : State {
         gameManager.matchTimerText.text = Mathf.Ceil(gameManager.gameTimeRemaining).ToString();
         gameManager.matchTimerText.gameObject.SetActive(true);
         // disable input
-        gameManager.SetPlayerInput(false);
+        gameManager.SetSnakePlayerInput(false);
     }
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -36,7 +36,7 @@ public class CountDownState : State {
         // hide intro countdown timer
         gameManager.startCountdownText.gameObject.SetActive(false);
 
-        gameManager.SetPlayerInput(true);
+        gameManager.SetSnakePlayerInput(true);
     }
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
