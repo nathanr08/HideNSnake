@@ -84,15 +84,8 @@ public class GameManager : StateController {
         }
     }
 
-    public void SetPlayerInput(bool enabled)
+    public void SetSnakePlayerInput(bool enabled)
     {
-        GameObject[] hamsters = GameObject.FindGameObjectsWithTag(hamsterPlayer);
-        foreach (GameObject hamster in hamsters)
-        {
-            hamster.GetComponent<HamsterController>().enabled = enabled;
-            //hamster.GetComponent<Animator>().enabled = enabled;
-            hamster.GetComponentInChildren<Animator>().enabled = enabled;
-        }
         GameObject[] snakes = GameObject.FindGameObjectsWithTag(snakePlayer);
         foreach (GameObject snake in snakes)
         {

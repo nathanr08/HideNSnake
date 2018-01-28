@@ -24,6 +24,7 @@ public class InGameState : State {
         }
 
         gameManager.gameTimeRemaining -= Time.deltaTime;
+        gameManager.matchTimerText.text = Mathf.Ceil(gameManager.gameTimeRemaining).ToString();
         if (gameManager.gameTimeRemaining <= 0.0f || gameManager.DidSnakeWin())
         {
             animator.SetTrigger(GameManager.animEndMatchTrigger);
