@@ -38,7 +38,7 @@ public class MenuManager : MonoBehaviour
             SceneManager.UnloadSceneAsync( menuStack.Pop() );
             menuStack.Clear();
         }
-        if( "" == e.MenuName )
+        if( "" != e.MenuName )
         {
             menuStack.Push( e.MenuName );
             SceneManager.LoadSceneAsync( e.MenuName, LoadSceneMode.Additive );

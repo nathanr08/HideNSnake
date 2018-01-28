@@ -16,6 +16,13 @@ public class GameManager : StateController {
     public Text startCountdownText;
     public Text matchTimerText;
 
+    public string matchResults = "";
+
+    public GameObject victoryPanel;
+    public Image victoryImage;
+    public Sprite snakeImage;
+    public Sprite hamsterImage;
+
     public GameObject snakePrefab;
     public GameObject hamsterPrefab;
 
@@ -24,6 +31,7 @@ public class GameManager : StateController {
     public static string animStartCountdownTrigger = "StartCountdown";
     public static string animStartMatchTrigger = "StartMatch";
     public static string animEndMatchTrigger = "EndMatch";
+    public static string animBackToMenuTrigger = "BackToMenu";
 
     public float gameTimeRemaining;
     public float gameStartCountdown;
@@ -103,5 +111,10 @@ public class GameManager : StateController {
             snakeWon = true;
         }
         return snakeWon;
+    }
+
+    public void BackToMenu()
+    {
+        animator.SetTrigger(animBackToMenuTrigger);
     }
 }

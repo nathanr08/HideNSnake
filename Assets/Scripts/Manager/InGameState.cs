@@ -27,6 +27,11 @@ public class InGameState : State {
         gameManager.matchTimerText.text = Mathf.Ceil(gameManager.gameTimeRemaining).ToString();
         if (gameManager.gameTimeRemaining <= 0.0f || gameManager.DidSnakeWin())
         {
+            if (gameManager.gameTimeRemaining <= 0.0f)
+                gameManager.matchResults = GameManager.hamsterPlayer;
+            else
+                gameManager.matchResults = GameManager.snakePlayer;
+
             animator.SetTrigger(GameManager.animEndMatchTrigger);
         }
     }
