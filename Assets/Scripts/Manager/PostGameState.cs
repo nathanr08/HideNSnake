@@ -31,6 +31,7 @@ public class PostGameState : State {
         new ChangeMenuEvent("mainMenu");
 
         gameManager.victoryPanel.SetActive(false);
+        gameManager.matchTimerText.gameObject.SetActive(false);
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
